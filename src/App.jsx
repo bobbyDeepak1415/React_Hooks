@@ -12,10 +12,16 @@ function App() {
 
   const updateCountFromChild = useCallback(() => handleClick(setCount), []);
 
+  const expensiveValue = () => {
+    console.log("calculating...");
+    return count * 100;
+  };
+
   return (
     <>
       <div>
         <h1>Parent count at:{count}</h1>
+        <h1>Expenive value:{expensiveValue}</h1>
         <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
         <input onChange={(e) => setItem(e.target.value)} value={item} />
         <Child updateCounter={updateCountFromChild} count={count} />
