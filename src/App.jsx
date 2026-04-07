@@ -7,13 +7,15 @@ function App() {
   console.log("Parent rendering...");
 
   const [count, setCount] = useState(0);
+  const [item,setItem]=useState("")
 
   return (
     <>
       <div>
         <h1>Parent count at:{count}</h1>
         <button onClick={() => setCount((prev) => prev + 1)}>Click</button>
-        <Child />
+        <input value={item}/>
+        <Child count={count}/>
       </div>
     </>
   );
