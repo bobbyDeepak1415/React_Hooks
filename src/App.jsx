@@ -1,6 +1,6 @@
 // import './App.css'
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Child from "./Child";
 import { handleClick } from "./handleClick";
 
@@ -12,10 +12,10 @@ function App() {
 
   const updateCountFromChild = useCallback(() => handleClick(setCount), []);
 
-  const expensiveValue = () => {
+  const expensiveValue = useMemo(() => {
     console.log("calculating...");
     return count * 100;
-  };
+  }, [count]);
 
   return (
     <>
