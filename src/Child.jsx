@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const Child = ({ count,updateCounter }) => {
+const Child = ({ count, updateCounter }) => {
   console.log("child rendering...");
 
   return (
