@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Child from "./Child";
+import { handleClick } from "./handleClick";
 
 function App() {
   console.log("Parent rendering...");
@@ -9,10 +10,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [item, setItem] = useState("");
 
-  const updateCountFromChild = useCallback(
-    () => setCount((prev) => prev + 1),
-    [count],
-  );
+  const updateCountFromChild = useCallback(() => handleClick(setCount), []);
 
   return (
     <>
