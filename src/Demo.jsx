@@ -21,7 +21,6 @@ const Demo = () => {
       <div>
         <Child1 count={count} />
       </div>
-      ..
     </div>
   );
 };
