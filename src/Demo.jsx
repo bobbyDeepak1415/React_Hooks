@@ -7,7 +7,7 @@ const Demo = () => {
 
   const [count, setCount] = useState(0);
   const [item, setItem] = useState("");
-  const [title,setTitle]=useState("")
+  const [title, setTitle] = useState("");
 
   const expensiveValue = useMemo(() => {
     console.log("expensive function run...");
@@ -15,11 +15,8 @@ const Demo = () => {
   }, [count]);
 
   const countFromChild = useCallback(() => {
-    // setCount((prev) => prev + 1);
     handleClick(setCount);
   }, []);
-
-
 
   return (
     <div>
@@ -30,7 +27,11 @@ const Demo = () => {
 
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <div>
-        <Child1 setTitle={setTitle} updatedValue={countFromChild} count={count} />
+        <Child1
+          setTitle={setTitle}
+          updatedValue={countFromChild}
+          count={count}
+        />
       </div>
     </div>
   );
