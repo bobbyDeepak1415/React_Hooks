@@ -1,6 +1,6 @@
 import React, { useState, memo } from "react";
 
-const Child1 = ({ count }) => {
+const Child1 = ({ count, updatedValue }) => {
   console.log("child rendering...");
 
   const [num, setNum] = useState(0);
@@ -10,6 +10,13 @@ const Child1 = ({ count }) => {
       <h1>Child count is at:{count}</h1>
       <h2>{num}</h2>
       <button onClick={() => setNum(num + 1)}>Click</button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <button onClick={updatedValue}>
+        ChildIncrement
+      </button>
     </div>
   );
 };

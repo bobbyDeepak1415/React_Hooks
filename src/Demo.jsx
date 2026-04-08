@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Child1 from "./Child1";
+import { handleClick } from "./handleClick";
 
 const Demo = () => {
   console.log("Demo rendering...");
@@ -12,14 +13,20 @@ const Demo = () => {
     return count * 100;
   }, [count]);
 
+  const countFromChild = useCallback(() => {
+    // setCount((prev) => prev + 1);
+    handleClick(setCount);
+  }, []);
+
   return (
     <div>
       <input value={item} onChange={(e) => setItem(e.target.value)} />
       <h1>Demo count is at :{count}</h1>
       <h2>Expensive value:{expensiveValue}</h2>
+
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <div>
-        <Child1 count={count} />
+        <Child1 updatedValue={() => countFromChild()} count={count} />
       </div>
     </div>
   );
