@@ -26,7 +26,7 @@ const Demo = () => {
 
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <div>
-        <Child1 updatedValue={() => countFromChild()} count={count} />
+        <Child1 updatedValue={countFromChild} count={count} />
       </div>
     </div>
   );
