@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 
 const Child1 = ({ count }) => {
   console.log("child rendering...");
@@ -14,4 +14,4 @@ const Child1 = ({ count }) => {
   );
 };
 
-export default Child1;
+export default memo(Child1);
