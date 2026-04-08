@@ -17,7 +17,7 @@ const Demo = () => {
       <h2>Expensive value:{expensiveValue}</h2>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <div>
-        <Child1 />
+        <Child1 count={count}/>
       </div>..
     </div>
   );
