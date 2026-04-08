@@ -1,14 +1,7 @@
 import React from "react";
 
-const Child1 = ({ count, updatedValue }) => {
-  console.log("child rendering...");
-
-  return (
-    <div>
-      <h1>Child count is at:{count}</h1>
-      <button onClick={updatedValue}>Child increment</button>
-    </div>
-  );
+const Child1 = () => {
+  return <div>Child1</div>;
 };
 
 export default Child1;
