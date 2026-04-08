@@ -6,11 +6,12 @@ const Demo = () => {
   const [count, setCount] = useState(0);
   const [item, setItem] = useState("");
 
-  // const expensiveResult = useMemo(() => {
-  //   return count * 100;
-  // }, [count]);
+  const expensiveResult = useMemo(() => {
+    console.log("calculation...");
+    return count * 100;
+  }, [count]);
 
-  const expensiveResult = count * 100;
+  // const expensiveResult = count * 100;
 
   return (
     <div>
