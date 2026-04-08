@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 const Demo = () => {
   console.log("parent rendering...");
@@ -13,6 +13,11 @@ const Demo = () => {
 
   // const expensiveResult = count * 100;
 
+  const memoizedClick = useCallback(() => {
+    console.log("memoizedClick");
+    setCount((prev) => prev + 1);
+  }, []);
+
   return (
     <div>
       <h1>Parent count is at:{count}</h1>
@@ -22,7 +27,7 @@ const Demo = () => {
         onChange={(e) => setItem(e.target.value)}
         type="text"
       />
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={memoizedClick}>Increment</button>
     </div>
   );
 };
