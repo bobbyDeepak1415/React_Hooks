@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Demo = () => {
+
+  console.log("parenet rendering...")
+
+  const [count,setCount]=useState(0)
+
   return (
     <div>
-      Demo
+      <h1>parent count is at:{count}</h1>
+    
     </div>
   )
 }
