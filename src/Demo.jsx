@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 import Child1 from "./Child1";
+import { handleClick } from "./handleClick";
 
 const Demo = () => {
   console.log("parenet rendering...");
@@ -8,7 +9,7 @@ const Demo = () => {
   const [item, setItem] = useState("");
 
   const memoizedFunc = useCallback(() => {
-    setCount((prev) => prev + 1);
+  handleClick(setCount)
   }, []);
 
   const expensiveFunc = useMemo(() => {
