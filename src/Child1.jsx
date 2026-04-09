@@ -1,10 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Child1 = () => {
+const Child1 = ({ count,memoizedFunc }) => {
+  console.log("child rendering...");
 
-  console.log("child rendering...")
-
-  return <div>Child1</div>;
+  return (
+    <div>
+      <h1>Child count is at:{count}</h1>
+      <button onClick={memoizedFunc}>Child increment</button>
+    </div>
+  );
 };
 
-export default Child1;
+export default memo(Child1);
