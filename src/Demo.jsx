@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import Child1 from "./Child1";
 
 const Demo = () => {
+  console.log("Parent rendering...");
 
-  console.log("Parent rendering...")
+  const [count, setCount] = useState(0);
+  const [item, setItem] = useState("");
 
-  const [count,setCount]=useState(0)
+  const memoizedFunc = useCallback(() => {
+    console.log("expensive func run..");
+    setCount(count + 1);
+  }, [count]);
 
-
-
-  return <div>
-    <h1>Parent Count is at:{count}</h1>
-    <button onClick={()=>setCount(count+1)}>Increment</button>
+  return (
     <div>
-<br/>
-<br/>
-<br/>
-<br/>
-    <input/>
+      <h1>Parent Count is at:{count}</h1>
+      <button onClick={memoizedFunc}>Increment</button>
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <input value={item} onChange={(e) => setItem(e.target.value)} />
+      </div>
+      <Child1 memoizedFunc={memoizedFunc} count={count} />
     </div>
-  </div>;
+  );
 };
 
 export default Demo;
