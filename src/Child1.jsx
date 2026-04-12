@@ -3,7 +3,7 @@ import React from 'react'
 const Child1 = () => {
   return (
     <div>
-      
+      <h1>Child</h1>
     </div>
   )
 }
