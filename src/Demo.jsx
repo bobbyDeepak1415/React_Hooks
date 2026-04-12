@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Child1 from "./Child1";
-import { handleClick } from "./handleClick";
+import handleClick from "./handleClick";
 
 const Demo = () => {
   const [title, setTitle] = useState("");
