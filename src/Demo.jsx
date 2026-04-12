@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Child1 from "./Child1";
 
 const Demo = () => {
@@ -12,9 +12,15 @@ const Demo = () => {
     setCount(count + 1);
   }, [count]);
 
+  const expensiveValue = useMemo(() => {
+    console.log("expensive value computed...");
+    return count * 100;
+  }, [count]);
+
   return (
     <div>
       <h1>Parent Count is at:{count}</h1>
+      <h2>Expensive value:{expensiveValue}</h2>
       <button onClick={memoizedFunc}>Increment</button>
       <div>
         <br />
