@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import Child1 from "./Child1";
-import handleClick from "./handleClick";
+import React, { useReducer } from "react";
+
+
+const initialState={
+  count:0
+}
+
+const reducer=(state,action)=>{
+
+  switch(action.type){
+    case "decrement" : return {count:state.count-1}
+  }
+
+}
 
 const Demo = () => {
-  const [title, setTitle] = useState("");
-  const [names, setNames] = useState([]);
 
-  return (
-    <div>
-      <h1>Demo</h1>
-      <h2>Name:{title}</h2>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} />
-      <button onClick={() => handleClick(setNames, title, names, setTitle)}>
-        Add
-      </button>
-      <div>
-        {names.map((name, id) => {
-          return <li key={id}>{name}</li>;
-        })}
-      </div>
-      <Child1 />
-    </div>
-  );
+  const [state,dispatch]=useReducer(reducer,initialState)
+
+
+
+  return <div>
+<h1>Count at:{state}</h1>
+<button onClick={()=>dispatch({type:"decrement"})}>-</button>
+
+
+  </div>;
 };
 
 export default Demo;
