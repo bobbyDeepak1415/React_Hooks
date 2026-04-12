@@ -1,3 +1,4 @@
-export const handleClick = (setCount) => {
-  setCount(prev=>prev+1);
+export const handleClick = (setNames, title, names, setTitle) => {
+  setNames([...names, title]);
+  setTitle("");
 };
