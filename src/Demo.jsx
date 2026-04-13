@@ -10,7 +10,7 @@ const Demo = () => {
   const count=useRef(0)
 
   return <div>
-    <h1>count is at:{count.current}</h1>
+    <h1 ref={count}>count is at:{count.current}</h1>
     <button onClick={()=>handleClick()} >Increment</button>
   </div>;
 };
