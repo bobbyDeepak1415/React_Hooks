@@ -4,12 +4,8 @@ const initialState = {
   count: 0,
 };
 
-function reducer(state, action) {
-  if (action.type == "increment") {
-    return { count: state.count + 1 };
-  } else if (action.type === "decrement") {
-    return { count: state.count - 1 };
-  }
+function reducer(){
+  
 }
 
 const Demo = () => {
@@ -18,8 +14,9 @@ const Demo = () => {
   return (
     <div>
       <h2>Count is at:{state.count}</h2>
-      <button onClick={() => dispatch({ type: "increment" })}>+</button>
       <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "reset" })}>reset</button>
     </div>
   );
 };
