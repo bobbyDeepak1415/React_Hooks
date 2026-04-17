@@ -1,27 +1,11 @@
-import React, { useState } from "react";
+import React from 'react'
 
 const Demo = () => {
-  const [count, setCount] = useState(0);
-  const [nums, setNums] = useState([]);
-
   return (
     <div>
-      <p>count at: {count}</p>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-          setNums([...nums, count]);
-        }}
-      >
-        Increment
-      </button>
-      <div>
-        {nums.map((num) => {
-          return <li>{num}</li>;
-        })}
-      </div>
+      
     </div>
-  );
-};
+  )
+}
 
-export default Demo;
+export default Demo
