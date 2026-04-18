@@ -1,14 +1,16 @@
 import { useRef } from "react";
 
-
 const Demo = () => {
+  const count = useRef(0);
 
-  const count=useRef(0)
+  const handleIncrement=()=>{
+    
+  }
 
   return (
     <div>
-      <h2>Count is at:{}</h2>
-      <button onClick={() => console.log(count.current)}>Increment</button>
+      <h2>Count is at:{count.current}</h2>
+      <button onClick={handleIncrement}>Increment</button>
     </div>
   );
 };
