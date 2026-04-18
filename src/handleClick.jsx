@@ -1,6 +1,3 @@
-const handleClick = (setNames, title, names, setTitle) => {
-  setNames([...names, title]);
-  setTitle("");
-};
+const handleClick = () => {};
 
 export default handleClick;

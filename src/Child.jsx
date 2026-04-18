@@ -5,7 +5,7 @@ const Child = ({ count, updateCounter }) => {
 
   return (
     <div>
-      <h1>Child count at:{count}</h1>
+      <h2>Child count at:{count}</h2>
       <button onClick={updateCounter}>Click</button>
     </div>
   );
