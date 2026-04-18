@@ -7,8 +7,8 @@ const Demo = () => {
 
   return (
     <div>
-      <h2>Count is at:{count.current}</h2>
-      <button onClick={}>Increment</button>
+      <h2>Count is at:{}</h2>
+      <button onClick={() => console.log(count.current)}>Increment</button>
     </div>
   );
 };
