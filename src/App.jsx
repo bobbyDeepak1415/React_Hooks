@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import Child from "./Child";
-import { handleClick } from "./handleClick";
+import handleClick from "./handleClick";
 
 function App() {
   console.log("Parent rendering...");
