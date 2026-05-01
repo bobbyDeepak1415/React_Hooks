@@ -1,17 +1,11 @@
-import React, { useRef } from 'react'
+import React from "react";
 
 const Demo = () => {
-
-  const count=useRef(0)
-
   return (
     <div>
-      <button onClick={()=>{
-        count.current=count.current+1
-        console.log(count.current)
-      }}>Click</button>
+      <h2>Hello bruv</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Demo
+export default Demo;
