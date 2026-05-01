@@ -1,3 +1,6 @@
-const handleClick = () => {};
+const handleClick = () => {
+
+    
+};
 
 export default handleClick;

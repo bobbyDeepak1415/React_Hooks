@@ -1,13 +1,13 @@
 import React from "react";
 
-const Child1 = ({count}) => {
-
-  console.log('child rendering...')
-  return <div>
-
-
-    <h1>Child count is at:{count}</h1>
-  </div>;
+const Child1 = ({ count, memoizedFunc }) => {
+  console.log("child rendering...");
+  return (
+    <div>
+      <h1>Child count is at:{count}</h1>
+      <button onClick={memoizedFunc}>Child Click</button>
+    </div>
+  );
 };
 
-export default Child1;
+export default React.memo(Child1);
