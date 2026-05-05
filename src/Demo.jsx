@@ -9,20 +9,21 @@ const initialState={
 function reducer(state,action){
 
   switch(action.type){
-    case "increment"
+    case "increment" :
+      return state.count+1
   }
 
 }
 
 const Demo = () => {
 
-  const [state,action]=useReducer(reducer,initialState)
+  const [state,diapatch]=useReducer(reducer,initialState)
 
 
   return (
     <div>
-      <h2>count is at:{count}</h2>
-      <button></button>
+      <h2>count is at:{state.count}</h2>
+      <button onClick={()=>diapatch({type:"increment"})}>+</button>
     </div>
   );
 };
