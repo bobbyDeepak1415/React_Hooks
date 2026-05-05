@@ -22,7 +22,7 @@ const Demo = () => {
 
   return (
     <div>
-      <h2>count is at:{state.count}</h2>
+      <h2>count is at:{state.count}</h2>...
       <button onClick={()=>diapatch({type:"increment"})}>+</button>
     </div>
   );
