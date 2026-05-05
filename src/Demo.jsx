@@ -3,7 +3,7 @@ import React from "react";
 const Demo = () => {
   return (
     <div>
-      <h2>Hello bruv</h2>
+      <h2>count is at:{state.count}</h2>
     </div>
   );
 };
