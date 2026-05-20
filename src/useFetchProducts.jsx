@@ -2,32 +2,18 @@ import { useState, useEffect } from "react";
 
 function useFetchProds(url) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setData(result.products || []);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+      const response = await fetch(url);
+      const result = await response.json();
+      setData(result.products);
     };
 
     fetchData();
   }, [url]);
 
-  return { data, loading, error };
+  return data; // Just returning the raw array of products
 }
 
 export default useFetchProds;

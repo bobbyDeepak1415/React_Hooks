@@ -1,21 +1,11 @@
-import React from 'react'
+import React from "react";
 import useFetchProds from "./useFetchProds";
 
 const Demo = () => {
-  const {
-    data: products,
-    loading,
-    error,
-  } = useFetchProds("https://dummyjson.com/products");
+  // 1. Call the hook and get the data array directly
+  const products = useFetchProds("https://dummyjson.com/products");
 
-  if (loading) {
-    return <div>Loading product titles...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+  // 2. Render the titles directly
   return (
     <div>
       <h2>Product Titles</h2>
@@ -26,6 +16,6 @@ const Demo = () => {
       </ul>
     </div>
   );
-}
+};
 
-export default Demo
+export default Demo;
