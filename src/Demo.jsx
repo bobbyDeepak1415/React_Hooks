@@ -6,7 +6,7 @@ import useFetchProds from './useFetchProds';
 let url = "https://dummyjson.com/products";
 const Demo = () => {
 
-  const prods=useFetchProds(url)
+  const {prods}=useFetchProds(url)
 
 
 
@@ -18,9 +18,15 @@ const Demo = () => {
         Hello
       </h1>
       <div>
+        {}
 
       <h2>Products list</h2>
-      {prods}
+      <ul>
+
+      {prods.map((product)=>{
+        return <li key={product.id}>{product.title}</li>
+      })}
+      </ul>
       </div>
     </div>
   )

@@ -8,12 +8,15 @@ const useFetchProds = (url) => {
     axios
       .get(url)
       .then((response) => setProds(response.data))
+      .then((res) => {
+        return res;
+      })
       .catch((error) => {
         console.log("failed To fetch", error);
       });
   }, []);
 
-  return <div></div>;
+  return {prods};
 };
 
 export default useFetchProds;
