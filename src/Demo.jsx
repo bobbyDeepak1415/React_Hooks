@@ -1,21 +1,29 @@
-import React from "react";
-import useFetchProds from "./useFetchProds";
+import React from 'react'
+import useFetchProds from './useFetchProds';
 
+
+
+let url = "https://dummyjson.com/products";
 const Demo = () => {
-  // 1. Call the hook and get the data array directly
-  const products = useFetchProds("https://dummyjson.com/products");
 
-  // 2. Render the titles directly
+  const prods=useFetchProds(url)
+
+
+
+
+
   return (
     <div>
-      <h2>Product Titles</h2>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+      <h1>
+        Hello
+      </h1>
+      <div>
 
-export default Demo;
+      <h2>Products list</h2>
+      {prods}
+      </div>
+    </div>
+  )
+}
+
+export default Demo
