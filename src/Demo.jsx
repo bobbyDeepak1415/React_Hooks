@@ -1,35 +1,7 @@
-import React from 'react'
-import useFetchProds from './useFetchProds';
+import React from "react";
 
-
-
-let url = "https://dummyjson.com/products";
 const Demo = () => {
+  return <div></div>;
+};
 
-  const {prods}=useFetchProds(url)
-
-
-
-
-
-  return (
-    <div>
-      <h1>
-        Hello
-      </h1>
-      <div>
-        {}
-
-      <h2>Products list</h2>
-      <ul>
-
-      {prods.map((product)=>{
-        return <li key={product.id}>{product.title}</li>
-      })}
-      </ul>
-      </div>
-    </div>
-  )
-}
-
-export default Demo
+export default Demo;
