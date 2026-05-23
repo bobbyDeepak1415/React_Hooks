@@ -15,7 +15,9 @@ const Demo = () => {
       <section>
         <ul>
 
-        {}
+        {products.map((item)=>{
+          return <li>{item.title}</li>
+        })}
         </ul>
       </section>
       </h2>

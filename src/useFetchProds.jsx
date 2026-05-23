@@ -1,11 +1,16 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const useFetchProds = (url) => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [products, setProducts] = useState([]);
 
-export default useFetchProds
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setProducts(response.data.products);
+    });
+  });
+
+  return {products}
+};
+
+export default useFetchProds;
