@@ -5,12 +5,16 @@ const useFetchProds = (url) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setProducts(response.data.products);
-    });
-  },[]);
+    try {
+      axios.get(url).then((response) => {
+        setProducts(response.data.products);
+      });
+    } catch (er) {
+      console.log("failed to fetch", er);
+    }
+  }, []);
 
-  return {products}
+  return { products };
 };
 
 export default useFetchProds;
