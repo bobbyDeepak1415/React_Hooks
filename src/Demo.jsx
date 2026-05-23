@@ -1,42 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import useFetchProds from "./useFetchProds";
 
-
-let url="https://dummyjson.com/products"
+let url = "https://dummyjson.com/products";
 
 const Demo = () => {
-
-  const {products}=useFetchProds(url)
-
-
-const categories=products.map((product)=>product.category)
-
-  const uniqueCategories=new Set(categories)
+  const { products } = useFetchProds(url);
 
   
 
-  return <div>
-    <h2>
-      
-      Products here:
-      <section>
-        <select value={} onChange={}>
-          {uniqueCategories.map((i)=>{
-            return <option >{i}</option>
-          })}
+  const [status, setStatus] = useState("all");
 
+  const categories = products.map((product) => product.category);
 
-        </select>
-        <ul>
+  const uniqueCategories = new Set();
 
-        {beautyProducts.map((item)=>{
-          return <li>{item.title}</li>
-        })}
-        </ul>
-      </section>
+  return (
+    <div>
+      <h2>
+        Products here:
+        <section>
+          <select onChange={(e) => setStatus(e.target.value)}>
+            
+            <option>all</option>
+            {}
+          </select>
+          <ul>
+            {products.map((item) => {
+              return <li>{item.title}</li>;
+            })}
+          </ul>
+        </section>
       </h2>
-
-  </div>;
+    </div>
+  );
 };
 
 export default Demo;
