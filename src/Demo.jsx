@@ -10,9 +10,11 @@ const Demo = () => {
 
   const [status, setStatus] = useState("all");
 
-  const categories = products.map((product) => product.category);
+  // const categories = products.map((product) => product.category);
 
-  const uniqueCategories = new Set();
+  const uniqueCategories = Array.from(new Set(products.map((prod=>prod.category))))
+
+  
 
   return (
     <div>
@@ -22,7 +24,9 @@ const Demo = () => {
           <select onChange={(e) => setStatus(e.target.value)}>
             
             <option>all</option>
-            {}
+            {uniqueCategories.map(i=>{
+              return <option value={status}>{i}</option>
+            })}
           </select>
           <ul>
             {products.map((item) => {

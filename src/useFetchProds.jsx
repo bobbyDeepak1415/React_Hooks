@@ -8,7 +8,7 @@ const useFetchProds = (url) => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
     });
-  });
+  },[]);
 
   return {products}
 };
