@@ -8,13 +8,25 @@ const Demo = () => {
 
   const {products}=useFetchProds(url)
 
-  const beautyProducts=products.filter(product=>product.category==="beauty")
+
+const categories=products.map((product)=>product.category)
+
+  const uniqueCategories=new Set(categories)
+
+  
 
   return <div>
     <h2>
       
       Products here:
       <section>
+        <select value={} onChange={}>
+          {uniqueCategories.map((i)=>{
+            return <option >{i}</option>
+          })}
+
+
+        </select>
         <ul>
 
         {beautyProducts.map((item)=>{
