@@ -8,6 +8,8 @@ const Demo = () => {
 
   const {products}=useFetchProds(url)
 
+  const beautyProducts=products.filter(product=>product.category==="beauty")
+
   return <div>
     <h2>
       
@@ -15,7 +17,7 @@ const Demo = () => {
       <section>
         <ul>
 
-        {products.map((item)=>{
+        {beautyProducts.map((item)=>{
           return <li>{item.title}</li>
         })}
         </ul>
