@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Child1 = ({count}) => {
-
-  console.log("child rendering...")
+const Child1 = ({handleClick,count}) => {
+  console.log("child rendering...");
 
   return (
     <div>
-      <h2>Child count is at:{count}</h2>
+      <p>Chilc=d count is at:{count}</p>
+      <button onClick={handleClick()}>Child increment</button>
     </div>
-  )
-}
+  );
+};
 
-export default Child1
+export default React.memo(Child1);
