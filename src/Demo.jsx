@@ -1,28 +1,21 @@
-import React, { useReducer } from "react";
+import React, { useState } from 'react'
+import Child1 from './Child1'
 
-const initialState = {
-  count: 0,
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "decrement": {
-      return {
-        count: state.count - 1,
-      };
-    }
-  }
-}
 
 const Demo = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [count,setCount]=useState(0)
 
   return (
     <div>
-      <p>{state.count}</p>
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-    </div>
-  );
-};
 
-export default Demo;
+      <p>count is at :{count}</p>
+      <button onClick={()=>setCount(prev=>prev+1)}>Increment</button>
+
+      
+      <Child1/>
+    </div>
+  )
+}
+
+export default Demo
