@@ -9,7 +9,7 @@ const Demo = () => {
   console.log("parent rendering...");
 
   const handleClick = useCallback(() => {
-   setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
   }, []);
 
   return (
@@ -18,7 +18,7 @@ const Demo = () => {
       <h2>count is at :{count}</h2>
       <button onClick={handleClick}>Increment</button>
       <div>
-        <Child1 increment={handleClick} count={count}/>
+        <Child1 increment={handleClick} count={count} />
       </div>
     </div>
   );
