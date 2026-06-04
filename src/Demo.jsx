@@ -1,14 +1,6 @@
-import React, { createContext } from 'react'
-
 const Demo = () => {
+  return <div></div>;
+};
 
-  const nameContext=createContext()
-
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Demo
+export default Demo;
+...
