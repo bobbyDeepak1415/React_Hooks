@@ -1,12 +1,12 @@
 import React from "react";
 
-const Child1 = ({handleClick,count}) => {
+const Child1 = ({ increment, count }) => {
   console.log("child rendering...");
 
   return (
     <div>
-      <p>Chilc=d count is at:{count}</p>
-      <button onClick={handleClick()}>Child increment</button>
+      <p>Child count is at:{count}</p>
+      <button onClick={()=>increment()}>Child increment</button>
     </div>
   );
 };
