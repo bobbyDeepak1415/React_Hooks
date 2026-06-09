@@ -1,30 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const useFetchProds = (url) => {
-  const [products, setProducts] = useState([]);
-
-  const MAX_TRIES = 3;
-
-  useEffect(() => {
-    const fetchData = async (attemptsLeft) => {
-      try {
-        const res = await axios.get(url);
-        setProducts(res.data.products || res.data);
-      } catch (err) {
-        if (attemptsLeft > 1) {
-          console.log(`failed to fetch and tries Left is:${attemptsLeft - 1}`);
-          fetchData(attemptsLeft - 1);
-        } else {
-          console.log(`failed to fetch after:${MAX_TRIES}`, err);
-        }
-      }
-    };
-
-    fetchData(MAX_TRIES);
-  }, []);
-
-  return { products };
+const useFetchProds = () => {
+  return <div></div>;
 };
 
 export default useFetchProds;
