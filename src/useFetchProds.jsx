@@ -12,11 +12,11 @@ const useFetchProds = (url) => {
         const res = await axios.get(url);
         setProducts(res.data.products || res.data);
       } catch (err) {
-        if (attemptsLeft >1) {
-          console.log(`failed to fetch. tries Left:${attemptsLeft - 1}`);
-          await fetchData(attemptsLeft - 1);
+        if (attemptsLeft > 1) {
+          console.log(`failed to fetch and tries Left is:${attemptsLeft - 1}`);
+          fetchData(attemptsLeft - 1);
         } else {
-          console.log(`failed to fetch after ${MAX_TRIES}`, err);
+          console.log(`failed to fetch after:${MAX_TRIES}`, err);
         }
       }
     };
@@ -28,4 +28,3 @@ const useFetchProds = (url) => {
 };
 
 export default useFetchProds;
-
