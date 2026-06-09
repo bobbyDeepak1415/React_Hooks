@@ -2,10 +2,12 @@ import React from "react";
 import useFetchProds from "./useFetchProds";
 
 const Demo = () => {
-  const { products: allProducts } = useFetchProds(
-    // "https://dummyjson.com/products",
-    "https://jsonplaceholder.typicode.com/comments",
-  );
+
+
+    
+const { products: allProducts } = useFetchProds(
+  "https://dummyjson.com/products",
+);
 
   
 
@@ -13,9 +15,7 @@ const Demo = () => {
     <div>
       <h2>Products:</h2>
       <ul>
-        {allProducts.map((product) => {
-          return <li key={product.id}>{product.name}</li>;
-        })}
+        {allProducts}
       </ul>
     </div>
   );
