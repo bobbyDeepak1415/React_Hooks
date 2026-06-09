@@ -7,12 +7,17 @@ const useFetchProds = (url) => {
   const MAX_TRIES = 3;
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (attemptsLeft) => {
       try {
         const res = await axios.get(url);
-        setProducts(res.data.products);
+        setProducts(res.data.products || res.data);
       } catch (err) {
-        console.log("failed to fetch", err);
+        if(attemptsLeft){
+          console.log(`failed to fetch. tries Left:${attemptsLeft-1}`)
+         await fetchData(attemptsLeft-1)
+        }else{
+          console.log(`failed to fetch after ${attemptsLeft}`,err)
+        }
       }
     };
 
