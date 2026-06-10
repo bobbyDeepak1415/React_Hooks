@@ -1,4 +1,3 @@
-import React from "react";
 import useFetchProds from "./useFetchProds";
 
 const Demo = () => {
