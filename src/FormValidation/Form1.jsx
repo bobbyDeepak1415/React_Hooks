@@ -5,6 +5,8 @@ const Form1 = () => {
 
   const [errors, seterrors] = useState({ email: "", password: "" });
 
+  const [touched,setTouced]=useState({email:false,password:false})
+
 
   const validate=(name,value)=>{
     let errorMsg=""
@@ -20,6 +22,13 @@ const Form1 = () => {
         errorMsg="password must be at least 6 characters long"
       }
     }
+
+    seterrors((prev)=>{
+      return {
+        ...prev,
+        [name]:errorMsg
+      }
+    })
     
 
   }
