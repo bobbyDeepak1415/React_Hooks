@@ -3,13 +3,18 @@ import React, { useState } from "react";
 const Form1 = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
+
+  const handleChange=()=>{
+    
+  }
+
   return (
     <div>
       <form>
         <label>Email:</label>
-        <input value={formData.email}></input>
+        <input onChange={handleChange} name="email" value={formData.email}/>
         <label>Password:</label>
-        <input value={formData.password}></input>
+        <input onChange={handleChange} name="password" value={formData.password}/>
       </form>
     </div>
   );
