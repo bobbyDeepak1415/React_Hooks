@@ -5,33 +5,30 @@ const Form1 = () => {
 
   const [errors, seterrors] = useState({ email: "", password: "" });
 
-  const [touched,setTouced]=useState({email:false,password:false})
+  const [touched, setTouced] = useState({ email: false, password: false });
 
+  const validate = (name, value) => {
+    let errorMsg = "";
 
-  const validate=(name,value)=>{
-    let errorMsg=""
-
-    if(name==="email"){
-      if(!value.includes("@")){
-        errorMsg="Email must contain an @ symbol"
-      }
-    }
-    
-    if(name==="password"){
-      if(!value.length>6){
-        errorMsg="password must be at least 6 characters long"
+    if (name === "email") {
+      if (!value.includes("@")) {
+        errorMsg = "Email must contain an @ symbol";
       }
     }
 
-    seterrors((prev)=>{
+    if (name === "password") {
+      if (!value.length > 6) {
+        errorMsg = "password must be at least 6 characters long";
+      }
+    }
+
+    seterrors((prev) => {
       return {
         ...prev,
-        [name]:errorMsg
-      }
-    })
-    
-
-  }
+        [name]: errorMsg,
+      };
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,23 +40,43 @@ const Form1 = () => {
       };
     });
 
-    validate(name,value)
+    validate(name, value);
+  };
 
+  const handleBlur = (e) => {
+    const { name } = e.target;
+
+    setTouced((prev) => {
+      return {
+        ...prev,
+        [name]: true,
+      };
+    });
   };
 
   return (
     <div>
       <form>
         <label>Email:</label>
-        <input onChange={handleChange} name="email" value={formData.email} />
-        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        <input
+          onChange={handleChange}
+          onBlur={handleBlur}
+          name="email"
+          value={formData.email}
+        />
+        {touched.email && errors.email && (
+          <p style={{ color: "red" }}>{errors.email}</p>
+        )}
         <label>Password:</label>
         <input
           onChange={handleChange}
+          onBlur={handleBlur}
           name="password"
           value={formData.password}
         />
-        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
+        {touched.password && errors.password && (
+          <p style={{ color: "red" }}>{errors.password}</p>
+        )}
       </form>
     </div>
   );
