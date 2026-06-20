@@ -1,11 +1,49 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Form2 = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const [errors,setErrors]=useState({email:"",password:""})
+
+
+
+  const validate=(name,value)=>{
+    let errorMsg=""
+
+      if(name==="email"){
+    if(!value.contains("@")){
+errorMsg="email must contain @"
+
 }
 
-export default Form2
+}
+if(name==="password"){
+    if()
+}
+
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+
+    validate(name,value)
+
+  };
+
+  return (
+    <div>
+      <label>Email:</label>
+      <input value={formData.email} name="email" onChange={handleChange} />
+      {}
+    </div>
+  );
+};
+
+export default Form2;
