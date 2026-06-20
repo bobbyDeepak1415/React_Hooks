@@ -7,17 +7,23 @@ const Form1 = () => {
 
   const [touched, setTouced] = useState({ email: false, password: false });
 
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+
   const validate = (name, value) => {
     let errorMsg = "";
 
     if (name === "email") {
-      if (!value.includes("@")) {
+      if (!emailRegex.test(value)) {
         errorMsg = "Email must contain an @ symbol";
       }
     }
 
     if (name === "password") {
-      if (value.length < 6) {
+      if (!passwordRegex.test(value)) {
         errorMsg = "password must be at least 6 characters long";
       }
     }
@@ -89,6 +95,7 @@ const Form1 = () => {
         )}
         <label>Password:</label>
         <input
+        type="password"
           onChange={handleChange}
           onBlur={handleBlur}
           name="password"
