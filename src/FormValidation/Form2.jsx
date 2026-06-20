@@ -55,7 +55,7 @@ const Form2 = () => {
   };
 
   const isFormInvalid =
-    errors.email || errors.password || !formData.email || !formData.password;
+    errors.email || errors.password || !formData.password || !formData.email;
 
   return (
     <div>
