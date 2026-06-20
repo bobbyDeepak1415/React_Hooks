@@ -3,25 +3,22 @@ import React, { useState } from "react";
 const Form2 = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const [errors,setErrors]=useState({email:"",password:""})
+  const [errors, setErrors] = useState({ email: "", password: "" });
 
+  const validate = (name, value) => {
+    let errorMsg = "";
 
-
-  const validate=(name,value)=>{
-    let errorMsg=""
-
-      if(name==="email"){
-    if(!value.contains("@")){
-errorMsg="email must contain @"
-
-}
-
-}
-if(name==="password"){
-    if()
-}
-
-  }
+    if (name === "email") {
+      if (!value.contains("@")) {
+        errorMsg = "email must contain @";
+      }
+    }
+    if (name === "password") {
+      if (!value.length > 6) {
+        errorMsg = "password must be atleast 6 characters long";
+      }
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,8 +30,7 @@ if(name==="password"){
       };
     });
 
-    validate(name,value)
-
+    validate(name, value);
   };
 
   return (
