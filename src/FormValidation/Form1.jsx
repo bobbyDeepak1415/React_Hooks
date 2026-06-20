@@ -54,16 +54,29 @@ const Form1 = () => {
     });
   };
 
-  const isFormInvalid=errors.email || errors.password || !formData.email || !formData.password
+  const isFormInvalid =
+    errors.email || errors.password || !formData.email || !formData.password;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit=()=>{
+    if (
+      !errors.email &&
+      !errors.password &&
+      formData.email &&
+      formData.password
+    ) {
+      console.log("submission successfull", formData);
+      alert("successfull!");
+    }
 
-  }
+    setFormData({ email: "", password: "" });
+    setTouced({ email: false, password: false });
+  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}> 
+      <form onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
           onChange={handleChange}
