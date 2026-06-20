@@ -5,11 +5,13 @@ const Form2 = () => {
 
   const [errors, setErrors] = useState({ email: "", password: "" });
 
+  const [touched,setTouched]=useState({email:false,password:false})
+
   const validate = (name, value) => {
     let errorMsg = "";
 
     if (name === "email") {
-      if (!value.contains("@")) {
+      if (!value.includes("@")) {
         errorMsg = "email must contain @";
       }
     }
@@ -18,6 +20,13 @@ const Form2 = () => {
         errorMsg = "password must be atleast 6 characters long";
       }
     }
+
+    setErrors((prev) => {
+      return {
+        ...prev,
+        [name]: errorMsg,
+      };
+    });
   };
 
   const handleChange = (e) => {
@@ -33,11 +42,26 @@ const Form2 = () => {
     validate(name, value);
   };
 
+  const handleBlur=(e)=>{
+
+    const {name}=e.target
+
+    setTouched((prev)=>{
+        return {
+            ...prev,
+            [name]:true
+        }
+    })
+
+
+
+  }
+
   return (
     <div>
       <label>Email:</label>
-      <input value={formData.email} name="email" onChange={handleChange} />
-      {}
+      <input onBlur={handleBlur} value={formData.email} name="email" onChange={handleChange} />
+      {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
     </div>
   );
 };
