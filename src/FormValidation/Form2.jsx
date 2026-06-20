@@ -17,7 +17,7 @@ const Form2 = () => {
     }
 
     if (name === "password") {
-      if (value.length< 6) {
+      if (value.length < 6) {
         errorMsg = "password must be atleast 6 characters long";
       }
     }
@@ -54,6 +54,9 @@ const Form2 = () => {
     });
   };
 
+  const isFormInvalid =
+    errors.email || errors.password || !formData.email || !formData.password;
+
   return (
     <div>
       <label>Email:</label>
@@ -76,6 +79,10 @@ const Form2 = () => {
       {touched.password && errors.password && (
         <p style={{ color: "red" }}>{errors.password}</p>
       )}
+
+      <button type="submit" disabled={isFormInvalid}>
+        Submit
+      </button>
     </div>
   );
 };
