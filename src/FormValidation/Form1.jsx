@@ -54,9 +54,16 @@ const Form1 = () => {
     });
   };
 
+  const isFormInvalid=errors.email || errors.password || !formData.email || !formData.password
+
+
+  const handleSubmit=()=>{
+
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}> 
         <label>Email:</label>
         <input
           onChange={handleChange}
@@ -77,6 +84,8 @@ const Form1 = () => {
         {touched.password && errors.password && (
           <p style={{ color: "red" }}>{errors.password}</p>
         )}
+
+        <button disabled={isFormInvalid}>Submit</button>
       </form>
     </div>
   );
