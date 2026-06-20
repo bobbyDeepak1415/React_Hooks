@@ -17,7 +17,7 @@ const Form1 = () => {
     }
 
     if (name === "password") {
-      if (!value.length > 6) {
+      if (value.length < 6) {
         errorMsg = "password must be at least 6 characters long";
       }
     }
