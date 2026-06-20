@@ -54,18 +54,33 @@ const Form2 = () => {
     });
   };
 
+  const handleSubmit=(e)=>{
+e.preventDefault()
+
+if(!errors.email && !errors.password && formData.email && formData.password){
+  console.log("form successfully submitted eit data",formData)
+  alert('submission successful!')
+}
+
+setFormData({email:"",password:""})
+setTouched({email:false,password:false})
+
+  }
+
   const isFormInvalid =
     errors.email || errors.password || !formData.password || !formData.email;
 
   return (
     <div>
+      <form onSubmit={handleSubmit}>
+
       <label>Email:</label>
       <input
         onBlur={handleBlur}
         name="email"
         value={formData.email}
         onChange={handleChange}
-      />
+        />
       {touched.email && errors.email && (
         <p style={{ color: "red" }}>{errors.email}</p>
       )}
@@ -75,7 +90,7 @@ const Form2 = () => {
         name="password"
         value={formData.password}
         onChange={handleChange}
-      />
+        />
       {touched.password && errors.password && (
         <p style={{ color: "red" }}>{errors.password}</p>
       )}
@@ -83,6 +98,7 @@ const Form2 = () => {
       <button type="submit" disabled={isFormInvalid}>
         Submit
       </button>
+      </form>
     </div>
   );
 };
