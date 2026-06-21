@@ -7,17 +7,23 @@ const Form2 = () => {
 
   const [touched, setTouched] = useState({ email: false, password: false });
 
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+
   const validate = (name, value) => {
     let errorMsg = "";
 
     if (name === "email") {
-      if (!value.includes("@")) {
+      if (emailRegex.test(value)) {
         errorMsg = "the email must contain @";
       }
     }
 
     if (name === "password") {
-      if (value.length < 6) {
+      if (passwordRegex.test(value)) {
         errorMsg = "the password must be atleast 6 characters long";
       }
     }
@@ -54,12 +60,27 @@ const Form2 = () => {
     });
   };
 
+  const handleSubmit = () => {
+    if (
+      formData.email &&
+      formData.password &&
+      !error.password &&
+      !error.email
+    ) {
+      console.log("submission successful", formData);
+      alert("submission successful");
+    }
+
+    setFormData({ email: "", password: "" });
+    setTouched({ email: false, password: false });
+  };
+
   const isFormInvalid =
     !formData.email || !formData.password || error.email || error.password;
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
           onBlur={handleBlur}
@@ -70,8 +91,21 @@ const Form2 = () => {
         {touched.email && error.email && (
           <p style={{ color: "red" }}>{error.email}</p>
         )}
+        <label>Password:</label>
+        <input
+        type="password"
+          onBlur={handleBlur}
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        {touched.password && error.password && (
+          <p style={{ color: "red" }}>{error.password}</p>
+        )}
 
-        <button disabled={isFormInvalid}>Submit</button>
+        <button type="submit" disabled={isFormInvalid}>
+          Submit
+        </button>
       </form>
     </div>
   );
