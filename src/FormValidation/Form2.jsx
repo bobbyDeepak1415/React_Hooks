@@ -7,11 +7,9 @@ const Form2 = () => {
 
   const [touched, setTouched] = useState({ email: false, password: false });
 
-
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
-
 
   const validate = (name, value) => {
     let errorMsg = "";
@@ -93,7 +91,7 @@ const Form2 = () => {
         )}
         <label>Password:</label>
         <input
-        type="password"
+          type="password"
           onBlur={handleBlur}
           name="password"
           value={formData.password}
