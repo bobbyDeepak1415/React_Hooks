@@ -4,11 +4,24 @@ const Form2 = () => {
 
   const [formData,setFormData]=useState({email:"",password:""})
 
+  const handleChange=(e)=>{
+const {name,value}=e.target
+
+setFormData((prev)=>{
+  return {
+    ...prev,
+    [name]:value
+  }
+})
+
+  }
+
+
   return <div>
 
     <form>
       <label>Email:</label>
-      <input value={}/>
+      <input value={formData.email} onChange={handleChange}/>
     </form>
   </div>;
 };
