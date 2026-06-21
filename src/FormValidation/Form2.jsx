@@ -54,17 +54,24 @@ const Form2 = () => {
     });
   };
 
+  const isFormInvalid =
+    !formData.email || !formData.password || error.email || error.password;
+
   return (
     <div>
       <form>
         <label>Email:</label>
         <input
-          // onBlur={handleBlur}
+          onBlur={handleBlur}
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
-        {touched.email && error.email && <p style={{ color: "red" }}>{error.email}</p>}
+        {touched.email && error.email && (
+          <p style={{ color: "red" }}>{error.email}</p>
+        )}
+
+        <button disabled={isFormInvalid}>Submit</button>
       </form>
     </div>
   );
