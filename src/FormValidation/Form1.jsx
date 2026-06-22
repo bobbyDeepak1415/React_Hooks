@@ -34,6 +34,8 @@ const Form1 = () => {
         [name]: errorMsg,
       };
     });
+
+    return errorMsg===""
   };
 
   const handleChange = (e) => {
@@ -83,8 +85,9 @@ const Form1 = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
+        id="email"
           onChange={handleChange}
           onBlur={handleBlur}
           name="email"
