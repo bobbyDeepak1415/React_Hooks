@@ -1,12 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Child1 = () => {
-
-  const [count,setCount]=useState("")
-
   return (
     <div>
-      <p>{count}</p>
       
     </div>
   )
