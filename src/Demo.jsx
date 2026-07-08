@@ -1,18 +1,15 @@
-import useFetchProds from "./useFetchProds";
+import { useState } from "react";
+import Child1 from "./Child1";
 
 const Demo = () => {
-  const { products: allProducts } = useFetchProds(
-    "https://dummyjson.com/products",
-  );
+  const [count, setCount] = useState(0);
 
   return (
     <div>
-      <h2>Products:</h2>
-      <ul>
-        {allProducts.map((product) => {
-          return <li key={product.id}>{product.title}</li>;
-        })}
-      </ul>
+      <h1>Hello</h1>
+      <h2>{count}</h2>
+      <button onClick={() => setCount((prev) => prev + 1)}>+</button>
+      <Child1 count={count} />
     </div>
   );
 };
