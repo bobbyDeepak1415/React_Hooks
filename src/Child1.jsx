@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 
 const initialState = {
-  count: 1000,
+  count: 0,
 };
 
 function reducer(state, action) {
@@ -12,6 +12,7 @@ function reducer(state, action) {
       };
 
     case "decrement": {
+      if (state.count <= 0) return;
       return {
         count: state.count - 1,
       };
