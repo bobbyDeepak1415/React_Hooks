@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Child1 = () => {
+
+  const [count,setCount]=useState(0)
+
+  const handleClick=()=>{
+    
+  }
+
   return (
     <div>
-      Hello
+      <h2>{count}</h2>
+      <button onClick={handleClick}>+</button>
     </div>
   )
 }
