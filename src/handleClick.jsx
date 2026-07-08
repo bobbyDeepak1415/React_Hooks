@@ -1,6 +1,8 @@
-const handleClick = (setCount) => {
-setCount(prev=>prev+19)
 
-};
+import React from 'react'
 
-export default handleClick;
+const handleClick = () => {
+  
+}
+
+export default handleClick

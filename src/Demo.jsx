@@ -1,25 +1,31 @@
-import { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Child1 from "./Child1";
+// import handleClick from './handleClick'
 
 const Demo = () => {
+  console.log("parent renderi...");
 
-  console.log("parent rendering...")
   const [count, setCount] = useState(0);
+  const [input, setInput] = useState("");
 
-  const [input,setInput]=useState("")
+  const memoisedClick = useCallback(() => {
+    setCount((prev) => prev + 1);
+  }, []);
 
- const [title,setTitle]=useState("Bobby")
+  const expensiveValue = useMemo(() => {
+    console.log("expensive func run..");
+
+    return count * 2000;
+  }, [count]);
 
   return (
     <div>
-      <h1>Hello</h1>
+      <h2>parent count at:{count}</h2>
 
-<p>{title}</p>
-
-      <input value={input} onChange={(e)=>setInput(e.target.value)}/>
-      <h2>{count}</h2>
-      <button onClick={() => setCount((prev) => prev + 1)}>+</button>
-      <Child1  count={count} />
+      <p>expensive value:{expensiveValue}</p>
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <button onClick={memoisedClick}>+</button>
+      <Child1 count={count} childClick={memoisedClick} />
     </div>
   );
 };

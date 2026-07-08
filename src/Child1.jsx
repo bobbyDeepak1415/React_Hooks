@@ -1,14 +1,12 @@
 import React from "react";
 
 const Child1 = (props) => {
-  console.log("child rendering...");
-
-  let name = "Deepak";
+  console.log("child renderi...");
 
   return (
     <div>
-      <h3>Child count at:{props.count}</h3>
-
+      <h2>Child count at:{props.count}</h2>
+      <button onClick={props.childClick}>++</button>
     </div>
   );
 };
