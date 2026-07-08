@@ -8,13 +8,18 @@ const Demo = () => {
 
   const [input,setInput]=useState("")
 
+ const [title,setTitle]=useState("Bobby")
+
   return (
     <div>
       <h1>Hello</h1>
+
+<p>{title}</p>
+
       <input value={input} onChange={(e)=>setInput(e.target.value)}/>
       <h2>{count}</h2>
       <button onClick={() => setCount((prev) => prev + 1)}>+</button>
-      <Child1 count={count} />
+      <Child1  count={count} />
     </div>
   );
 };
