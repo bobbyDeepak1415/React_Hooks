@@ -11,6 +11,22 @@ const reducer = (state, action) => {
         count: state.count + 1,
       };
     }
+    case "decrement": {
+      if (state.count <= 0) return state;
+
+      return {
+        count: state.count - 1,
+      };
+    }
+    case "reset": {
+      return {
+        count: 0,
+      };
+    }
+
+    default: {
+      return state;
+    }
   }
 };
 
@@ -20,7 +36,9 @@ const Child1 = () => {
   return (
     <div>
       <h2>{state.count}</h2>
-      <button onClick={dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "reset" })}>reset</button>
     </div>
   );
 };
