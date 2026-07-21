@@ -5,6 +5,10 @@ const Demo = () => {
 
   const [formValues, setFormValues] = useState(initialValues);
 
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="container bg-gray">
       <form>
@@ -17,11 +21,13 @@ const Demo = () => {
               type="text"
               name="username"
               placeholder="Username"
+              onChange={handleChange}
             />
           </div>
           <div className="ui field">
             <label>Email:</label>
             <input
+              onChange={handleChange}
               value={formValues.email}
               type="email"
               name="email"
@@ -31,6 +37,7 @@ const Demo = () => {
           <div className="ui field">
             <label>Password:</label>
             <input
+              onChange={handleChange}
               type="password"
               value={formValues.email}
               name="password"
