@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 const Demo = () => {
+  const initialValues = { username: "", password: "", email: "" };
 
-  const initialValues={username:"",password:"",email:""}
-
-  const [formValues,setFormValues]=useState(initialValues)
+  const [formValues, setFormValues] = useState(initialValues);
 
   return (
     <div className="container bg-gray">
@@ -13,15 +12,30 @@ const Demo = () => {
         <div className="ui form">
           <div className="ui field">
             <label>UserName:</label>
-            <input type="text" name="username" placeholder="Username" />
+            <input
+              value={formValues.username}
+              type="text"
+              name="username"
+              placeholder="Username"
+            />
           </div>
           <div className="ui field">
             <label>Email:</label>
-            <input type="email" name="email" placeholder="Email" />
+            <input
+              value={formValues.email}
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
           </div>
           <div className="ui field">
             <label>Password:</label>
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              type="password"
+              value={formValues.email}
+              name="password"
+              placeholder="Password"
+            />
           </div>
         </div>
       </form>
