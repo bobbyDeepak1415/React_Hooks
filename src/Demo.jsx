@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Demo = () => {
+
+  const initialValues={username:"",password:"",email:""}
+
+  const [formValues,setFormValues]=useState(initialValues)
+
   return (
-    <div className="container">
+    <div className="container bg-gray">
       <form>
         <h1>Login Form:</h1>
         <div className="ui form">
