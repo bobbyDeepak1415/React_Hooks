@@ -4,7 +4,7 @@ const Demo = () => {
   return (
     <div className="container">
       <form>
-        <h1>User Form</h1>
+        <h1>Login Form:</h1>
         <div className="ui form">
           <div className="ui field">
             <label>UserName:</label>
