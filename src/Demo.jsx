@@ -11,7 +11,7 @@ export default function Demo() {
     setItems([...items, input]);
     setInput("");
   };
-
+..
   
   return (
     <div>
