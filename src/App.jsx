@@ -10,7 +10,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [item, setItem] = useState("");
 
-  const updateCountFromChild = useCallback(() => handleClick(setCount), []);
+  const updateCountFromChild = useCallback(() => handleClick(setCount,count), [count]);
 
   const expensiveValue = useMemo(() => {
     console.log("calculating...");
