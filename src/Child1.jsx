@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Child1 = () => {
+const Child1 = ({count}) => {
+  console.log("Child1 rendering...");
+
+
   return (
     <div>
-      Child1
+      Child count at:{count}
     </div>
   )
 }
