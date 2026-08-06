@@ -12,4 +12,3 @@ const inputFileRef=useRef(0)
 };
 
 export default Demo;
-...Demo.apply.apply.
