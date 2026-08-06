@@ -1,24 +1,35 @@
-import React from 'react'
-import useFetchProds from './useFetchProds';
+import React, { useState } from "react";
+import useFetchProds from "./useFetchProds";
 
 const Demo = () => {
+  const [item, setItem] = useState("");
 
   const url = "https://dummyjson.com/products";
 
-  const {products}=useFetchProds(url)
+  const { products } = useFetchProds(url);
+
+  const filteredProducts = item.length
+    ? products.filter((product) =>
+        product.title.toLowerCase().includes(item.toLocaleLowerCase()),
+      )
+    : products;
 
   return (
     <div>
+      <input
+        value={item}
+        onChange={(e) => setItem(e.target.value)}
+        placeholder="search..."
+      />
       <h2>Your products here:</h2>
 
       <ul>
-        {products.map((product)=>{
-          return <li key={product.id}>{product.title}</li>
+        {filteredProducts.map((product) => {
+          return <li key={product.id}>{product.title}</li>;
         })}
       </ul>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Demo
+export default Demo;
