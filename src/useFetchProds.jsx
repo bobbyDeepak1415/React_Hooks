@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from 'react'
 
-const useFetchProds = (url) => {
-  const [prods, setProds] = useState([]);
+const useFetchProds = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
 
-  useEffect(() => {
-    const fetchProds = async () => {
-      const response = await fetch(url);
-      const products = await response.json();
-      setProds(products);
-    };
-
-    fetchProds();
-  }, [url]);
-
-  return { prods };
-};
-
-export default useFetchProds;
+export default useFetchProds
