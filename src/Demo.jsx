@@ -8,9 +8,9 @@ const Demo = () => {
 
   const { products } = useFetchProds(url);
 
-  const filteredProducts = item.length
+  const filteredProducts = item.trim()
     ? products.filter((product) =>
-        product.title.toLowerCase().includes(item.toLocaleLowerCase()),
+        product.title.toLowerCase().includes(item.trim().toLocaleLowerCase()),
       )
     : products;
 
