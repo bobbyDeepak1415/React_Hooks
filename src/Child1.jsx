@@ -1,14 +1,9 @@
-import React from 'react'
+import React from "react";
 
-const Child1 = ({count}) => {
+const Child1 = ({ count }) => {
   console.log("Child1 rendering...");
 
+  return <div>Child count at:{count}</div>;
+};
 
-  return (
-    <div>
-      Child count at:{count}
-    </div>
-  )
-}
-
-export default Child1
+export default React.memo(Child1);
