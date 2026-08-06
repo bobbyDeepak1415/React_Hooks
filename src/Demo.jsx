@@ -8,24 +8,23 @@ const Demo = () => {
 
   console.log("parent rendering...");
 
-  const memoizedClick=useCallback(()=>{
-handleClick(setCount)
-  },[])
+  const memoizedClick = useCallback(() => {
+    handleClick(setCount);
+  }, []);
 
-
-  const expensiveValue=useMemo(()=>{
-    return count*1000
-  },[count])
+  const expensiveValue = useMemo(() => {
+    return count * 1000;
+  }, [count]);
 
   return (
     <>
       <h2>Hello</h2>
       <input value={item} onChange={(e) => setItem(e.target.value)} />
       <p>Parent count at:{count}</p>
-<p>Expensive value:{expensiveValue}</p>
+      <p>Expensive value:{expensiveValue}</p>
       <button onClick={memoizedClick}>Increment</button>
 
-      <Child1 memoizedClick={memoizedClick} count={count} />
+      <Child1 memoizedClickkkk={memoizedClick} count={count} />
     </>
   );
 };

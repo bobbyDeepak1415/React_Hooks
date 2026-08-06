@@ -1,12 +1,12 @@
 import React from "react";
 
-const Child1 = ({ count, memoizedClick }) => {
+const Child1 = ({ count, memoizedClickkkk }) => {
   console.log("Child1 rendering...");
 
   return (
     <div>
       Child count at:{count}
-      <button onClick={memoizedClick}>child click</button>
+      <button onClick={memoizedClickkkk}>child click</button>
     </div>
   );
 };
