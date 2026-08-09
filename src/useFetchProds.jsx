@@ -14,8 +14,11 @@ const useFetchProds = (initialValue="") => {
   }
 
   const bind={
-    value
+    value,
+    onChange:handleChange
   }
+
+  return {value,setValue,onChange:handleChange,reset,bind}
   
 }
 
