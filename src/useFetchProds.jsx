@@ -7,6 +7,15 @@ const useFetchProds = (initialValue="") => {
   const handleChange=(e)=>{
     setValue(e.target.value)
   }
+
+
+  const reset=()=>{
+    setValue("")
+  }
+
+  const bind={
+    value
+  }
   
 }
 
