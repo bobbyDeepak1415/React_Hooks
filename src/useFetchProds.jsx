@@ -1,25 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const useFetchProds = (initialValue="") => {
-
-  const [value,setValue]=useState(initialValue)
-
-  const handleChange=(e)=>{
-    setValue(e.target.value)
-  }
-
-
-  const reset=()=>{
-    setValue("")
-  }
-
-  const bind={
-    value,
-    onChange:handleChange
-  }
-
-  return {value,setValue,onChange:handleChange,reset,bind}
-  
+const useFetchProds = () => {
+  return (
+    <div>
+      Hello
+    </div>
+  )
 }
 
 export default useFetchProds
