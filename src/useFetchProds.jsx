@@ -2,13 +2,9 @@ import React, { useState } from 'react'
 
 const useFetchProds = () => {
 
-  const [input,setInput]=useState("")
+  const [item,setItem]=useState("")
 
-  return (
-    <div>
-      Hello
-    </div>
-  )
+  return {item,setItem}
 }
 
 export default useFetchProds
