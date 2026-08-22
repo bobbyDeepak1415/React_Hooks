@@ -25,6 +25,4 @@ multiplyByAmount:(state,action)=>{
 })
 
 
-export const {increment,decrement,multiplyByAmount}=CounterSlice.actions
-
-export default CounterSlice.reducer
+export const {increment,decrement,multiplyByAmount}= CounterSlice.actions
