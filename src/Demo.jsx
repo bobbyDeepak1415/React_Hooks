@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useDispatch } from "@reduxjs/toolkit";
+
 
 const Demo = () => {
 
-  const [count,setCount]=useState(0)
+
+  const dispatch = useDispatch()
+
+  const {count}=useSelector()
 
   return <div>
 
     <p>count is at:{count}</p>
-    <button onClick={()=>setCount(prev=>prev+1)}>Increment</button>
+    <button onClick={()=>dispatch({type:"increment"})}>Increment</button>
   </div>;
 };
 
