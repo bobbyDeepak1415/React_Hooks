@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "@reduxjs/toolkit";
+import { useDispatch,useSelector } from "";
 
 
 const Demo = () => {
@@ -7,7 +7,7 @@ const Demo = () => {
 
   const dispatch = useDispatch()
 
-  const {count}=useSelector()
+  const {count}=useSelector(state=>state.counter.count)
 
   return <div>
 
