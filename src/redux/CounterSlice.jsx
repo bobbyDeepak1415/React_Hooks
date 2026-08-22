@@ -18,9 +18,11 @@ decrement:(state)=>{
     state.count-=1
 },
 multiplyByAmount:(state,action)=>{
-            state.count+=action.payload
+            state.count*=action.payload
 
         },
     }
 })
 
+
+export const {increment,decrement,multiplyByAmount}=CounterSlice.actions
