@@ -11,7 +11,13 @@ const CounterSlice=createSlice({
     initialState,
     reducers:{
         increment:(state)=>{
-    
+    state.count=state.count+1
+        },
+        decrement:(state)=>{
+    state.count=state.count-1
+        },
+        multiplyByAmount:(state,action)=>{
+    state.count=state.count+action.payload
         }
     }
 })
