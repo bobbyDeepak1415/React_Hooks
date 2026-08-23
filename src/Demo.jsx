@@ -11,6 +11,13 @@ const reducerFun=(state,action)=>{
   state.count+=1
   case "decrement":
     state.count-=1
+  case "reset":
+    state.count=0
+  case "default":
+    state.count=0
+
+
+
   }
 
 
@@ -25,6 +32,7 @@ const Demo = () => {
       <p>count is at :{state.count}</p>
       <button onClick={()=>dispatch({type:"decrement"})}>-</button>
       <button onClick={()=>dispatch({type:"increment"})}>+</button>
+      <button onClick={()=>dispatch({type:"reset"})}>reset</button>
     </div>
   )
 }
