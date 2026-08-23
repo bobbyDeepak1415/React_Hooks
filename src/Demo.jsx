@@ -8,13 +8,13 @@ const initialState={
 const reducerFun=(state,action)=>{
   switch(action.type){
     case "increment":
-  state.count+=1
+ return state.count+=1
   case "decrement":
-    state.count-=1
+   return state.count-=1
   case "reset":
-    state.count=0
+   return state.count=0
   case "default":
-    state.count=0
+   return state.count=0
 
 
 
