@@ -1,22 +1,9 @@
-import React, { useReducer } from 'react'
-
-const initialState={
-  count:109
-}
-
-function reducerFunc(state,action){
-
-}
-
+import React from 'react'
 
 const Demo = () => {
-
-  const [state,dispatch]=useReducer(reducerFunc,initialState)
-
   return (
     <div>
-      <h2>Count is at:{state.count}</h2>
-      
+      Hello
     </div>
   )
 }
