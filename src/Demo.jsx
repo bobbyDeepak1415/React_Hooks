@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Demo = () => {
 
-  const [count,setCount]=useState(0)
+  const count=useSelector((state)=>state.counter.value)
   return (
     <div>
       <h2>Count at:{count}</h2>
-      <button onClick={()=>setCount(count+1)}>+</button>
+      <button onClick={()=}>+</button>
     </div>
   )
 }
