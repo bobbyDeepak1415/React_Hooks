@@ -1,39 +1,20 @@
 import React, { useReducer } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment, multiplyByAmount } from './redux/NumbersSlice';
 
-
-const initialState={
-  count:0
-}
-
-function reducer(state,action){
-
-  switch(action.type){
-    case "decrement":
-      return {count:state.count-1}
-    case "increment":
-      return {count:state.count+1}
-    case "reset":
-      return {count:0}
-    case "default":
-      return {count:state.count}
-  }
-
-}
-
-// increment:()=>{
-  // state.count+=1 
-// }
 
 const Demo = () => {
 
-  const [state,dispatch]=useReducer(reducer,initialState)
+  const num=useSelector(state=>state.numbers.num)
+
+  const dispatch = useDispatch();
 
   return (
     <div>
-      <p>Count at:{state.count}</p>
-      <button onClick={()=>dispatch({type:"decrement"})}>Decrement</button>
-      <button onClick={()=>dispatch({type:"increment"})}>increment</button>
-      <button onClick={()=>dispatch({type:"reset"})}>reset</button>
+      <p>Count at:{num}</p>
+      <button onClick={()=>dispatch(decrement())}>Decrement</button>
+      <button onClick={()=>dispatch(increment())}>Increment</button>
+      <button onClick={()=>dispatch(multiplyByAmount(3))}>*3</button>
     </div>
   )
 }
