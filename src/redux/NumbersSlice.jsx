@@ -24,3 +24,5 @@ const NumbersSlice=createSlice({
 })
 
 export const {increment,decrement}=NumbersSlice.actions
+
+export default NumbersSlice.reducer
