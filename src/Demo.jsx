@@ -13,7 +13,14 @@ const handleAddItem=()=>{
 }
 
 const total=itemList.reduce((acc,item)=>acc+item.price,0)
-  
+
+const handleDelete=(id)=>{
+
+  const newArr=itemList.filter((_,i)=>i!==id)
+  setItemList(newArr)
+
+}
+
   
   return (
     <div style={{height:"100vh",width:"100vh",backgroundColor:"gray"}}>
@@ -25,10 +32,10 @@ const total=itemList.reduce((acc,item)=>acc+item.price,0)
   <ul>
 
   {itemList.map((item,id)=>{
-    return <li key={id}>{item.name} <span>{item.price} <button>Delete</button></span></li>
+    return <li key={id}>{item.name} <span>{item.price} <button onClick={()=>handleDelete(id)}>Delete</button></span></li>
   })}
   </ul>
-  <p>${total}</p>
+  <p>rs{total}</p>
 </div>
 
     </div>
