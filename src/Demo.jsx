@@ -7,13 +7,10 @@ const Demo = () => {
   const [itemList,setItemList]=useState([])
 
 
-  const handleAddItem=(item,price)=>{
-    
+  const handleAddItem=()=>{
     setItemList([...itemList,{name:item,price:price}])
-
-
   }
-
+  
   return (
     <div>
       <h1>Groceries</h1>
