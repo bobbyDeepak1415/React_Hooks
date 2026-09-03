@@ -14,6 +14,8 @@ const handleAddItem=()=>{
 
 const total=itemList.reduce((acc,item)=>acc+item.price,0)
 
+......
+
 const handleDelete=(id)=>{
 
   const newArr=itemList.filter((_,i)=>i!==id)
