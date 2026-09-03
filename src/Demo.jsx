@@ -9,7 +9,7 @@ const Demo = () => {
 
   const handleAddItem=(item,price)=>{
     
-    setItemList([...itemList,item,price])
+    setItemList([...itemList,{name:item,price:price}])
 
 
   }
