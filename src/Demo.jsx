@@ -14,7 +14,6 @@ const handleAddItem=()=>{
 
 const total=itemList.reduce((acc,item)=>acc+item.price,0)
 
-......
 
 const handleDelete=(id)=>{
 
@@ -37,7 +36,7 @@ const handleDelete=(id)=>{
     return <li key={id}>{item.name} <span>{item.price} <button onClick={()=>handleDelete(id)}>Delete</button></span></li>
   })}
   </ul>
-  <p>rs{total}</p>
+  <p>Total:{total}</p>
 </div>
 
     </div>
