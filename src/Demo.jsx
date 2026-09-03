@@ -6,11 +6,17 @@ const Demo = () => {
   const [price,setPrice]=useState(0)
   const [itemList,setItemList]=useState([])
 
+const handleAddItem=()=>{
+  setItemList([...itemList,{name:item,price:Number(price)}])
+  setItem("")
+  setPrice("")
+}
 
+const total=itemList.reduce((acc,item)=>acc+item.price,0)
   
   
   return (
-    <div>
+    <div style={{height:"100vh",width:"100vh",backgroundColor:"gray"}}>
       <h1>Groceries</h1>
       <input value={item} onChange={(e)=>setItem(e.target.value)}/>
       <input value={price} type='number'  onChange={(e)=>setPrice(e.target.value)}/>
@@ -19,9 +25,10 @@ const Demo = () => {
   <ul>
 
   {itemList.map((item,id)=>{
-    return <li key={id}>{item.name} <span>{item.price}</span></li>
+    return <li key={id}>{item.name} <span>{item.price} <button>Delete</button></span></li>
   })}
   </ul>
+  <p>${total}</p>
 </div>
 
     </div>
