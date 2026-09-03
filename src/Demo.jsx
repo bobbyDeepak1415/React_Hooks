@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Demo = () => {
+
+  const [item,setItem]=useState("")
+  const [price,setPrice]=useState(0)
+
   return (
     <div>
-      Hello bruv
+      <h1>Groceries</h1>
+      <input value={item} onChange={(e)=>setItem(e.target.value)}/>
+      <input value={price} onChange={(e)=>setPrice(e.target.value)}/>
     </div>
   )
 }
