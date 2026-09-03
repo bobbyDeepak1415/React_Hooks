@@ -18,8 +18,8 @@ const Demo = () => {
     <div>
       <h1>Groceries</h1>
       <input value={item} onChange={(e)=>setItem(e.target.value)}/>
-      <input value={price} onChange={(e)=>setPrice(e.target.value)}/>
-      <button onClick={()=>handleAddItem(item,price)}>AddToCart</button>
+      <input value={price} type='number'  onChange={(e)=>setPrice(e.target.value)}/>
+      <button onClick={handleAddItem}>AddToCart</button>
 <div>
   <ul>
 
