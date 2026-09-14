@@ -1,21 +1,27 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment,decrement } from './redux/CounterSlice';
 
+
+const initialState={
+    count:20
+}
+
+
+function reducer(state,action){
+
+}
+
+
 const Demo = () => {
 
-  const count=useSelector((state)=>state.counter.count)
 
+  const [state,dispatch]=useReducer(reducer,initialState)
 
-  const dispatch = useDispatch();
-
-  return (
-    <div>
-      <p>Count at:{count}</p>
-      <button onClick={()=>dispatch(decrement())}>Decrement</button>
-      <button onClick={()=>dispatch(increment())}>Increment</button>
-      
-    </div>
+ return (
+  <div>
+  <h2>Count at:{state.count}</h2>
+  </div>
   )
 }
 
