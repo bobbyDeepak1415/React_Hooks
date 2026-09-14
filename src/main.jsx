@@ -16,26 +16,16 @@
 
 
 
-let str="Hello world"
+let str="Hello worlds"
 
 
 function display(str){
 
 
-  let arr=str.split(" ")
 
-  let result=[]
-
-  for(let i of arr){
-    let seen=new Set(i)
-result.push(`${i}-${seen.size}`)
-  }
-  
-
-return result  
 
 }
 
 
-console.log(display(str))
+// console.log(display(str))
 
