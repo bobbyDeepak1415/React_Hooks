@@ -16,25 +16,22 @@
 
 
 
-let str="Hello World"
+let str="Hello world"
 
 
 function display(str){
 
-  let arr=str.split(" ")
-  let seen=new Set()
 
+  let arr=str.split(" ")
+
+  // for(let i of str){
+
+  // }
+
+  return arr
   
 
-  for(let i=0;i<arr.length;i++){
-let item=arr[i]
-
-if(!seen.has(item)){
-  seen.add()
-}
-   
-
-  }
+  
 
 }
 
