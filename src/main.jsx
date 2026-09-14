@@ -21,8 +21,23 @@ let str="Hello World"
 
 function display(str){
 
+  let arr=str.split(" ")
+  let seen=new Set()
+
+  
+
+  for(let i=0;i<arr.length;i++){
+let item=arr[i]
+
+if(!seen.has(item)){
+  seen.add()
+}
+   
+
+  }
+
 }
 
 
-// console.log(display(str))
+console.log(display(str))
 
