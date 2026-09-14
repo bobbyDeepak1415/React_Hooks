@@ -7,5 +7,18 @@ const initialState={
 
 
 const CounterSlice=createSlice({
-    
+    name:"counter",
+    initialState,
+    reducers:{
+        increment:()=>{
+
+        },
+        decrement:()=>{
+
+        },
+    }
+
 })
+
+
+export default CounterSlice.reducer
