@@ -11,4 +11,4 @@ const store=configureStore({
 })
 
 
-export default 
+export default store
