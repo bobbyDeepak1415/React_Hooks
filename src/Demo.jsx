@@ -12,7 +12,8 @@ function reducer(state,action){
 
   switch(action.type){
     case "increment":
-      
+      return count=state.count+1
+
   }
 
 }
@@ -26,6 +27,8 @@ const Demo = () => {
  return (
   <div>
   <h2>Count at:{state.count}</h2>
+  <button onClick={()=>dispatch({type:"decrement"})}>Decrement</button>
+  <button onClick={()=>dispatch({type:"increment"})}>increment</button>
   </div>
   )
 }
