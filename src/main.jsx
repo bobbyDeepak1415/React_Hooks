@@ -24,14 +24,15 @@ function display(str){
 
   let arr=str.split(" ")
 
-  // for(let i of str){
+  let result=[]
 
-  // }
-
-  return arr
+  for(let i of arr){
+    let seen=new Set(i)
+result.push(`${i}-${seen.size}`)
+  }
   
 
-  
+return result  
 
 }
 
