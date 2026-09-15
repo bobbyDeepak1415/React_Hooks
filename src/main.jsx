@@ -17,3 +17,11 @@
 
 
 let str='Hello World'
+
+
+function display(){
+
+}
+
+
+// console.log(display(str))
