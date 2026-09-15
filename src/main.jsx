@@ -19,7 +19,17 @@
 let str='Hello World'
 
 
-function display(){
+function display(str){
+
+  let arr=str.split(" ")
+  let result=[]
+
+  for(let i of arr){
+    let check=new Set(i)
+result.push(check.size)
+  }
+
+  return result
 
 }
 
