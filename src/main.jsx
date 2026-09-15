@@ -16,7 +16,7 @@
 
 
 
-let str='Hello World'
+let str='Hellopppp World'
 
 
 function display(str){
@@ -25,8 +25,7 @@ function display(str){
   let result=[]
 
   for(let i of arr){
-    let check=new Set(i)
-result.push(check.size)
+result.push(`${i}-${i.length}`)
   }
 
   return result
@@ -34,4 +33,4 @@ result.push(check.size)
 }
 
 
-// console.log(display(str))
+console.log(display(str))
