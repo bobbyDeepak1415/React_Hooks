@@ -1,35 +1,16 @@
 import React, { useState } from 'react'
-import useFetchProds from './useFetchProds'
 
 const Demo = () => {
 
-  let url='https://dummyjson.com/products'
+  console.log("parent rendering")
 
-  const {products}=useFetchProds(url)
-
-  const [item,setItem]=useState("")
-
-
-  const filteredProducts=products.filter((product)=>product.title.toLowerCase().includes(item.toLowerCase()))
+  const [count,setCount]=useState(0)
 
   return (
     <div>
-      <h1>Products list here:</h1>
-      <input value={item} onChange={(e)=>setItem(e.target.value)}/>
-
-      {item.length?(
-
-<ul>
-
-        
-
-      {filteredProducts.map((product)=>{
-        return <li key={product.id}>{product.title}</li>
-      })}
-      </ul>
-      ):(
-        <p>Search here:</p>
-      )}
+      <h2>Parent</h2>
+      <p>{count}</p>
+      <button onClick={()=>setCount(prev=>prev+1)}>+</button>
       
     </div>
   )

@@ -1,16 +1,11 @@
-import React, { memo } from "react";
+import React from 'react'
 
-const Child = ({ count, updateCounter }) => {
-  console.log("child rendering...");
-
+const Child = () => {
   return (
     <div>
-      <h2>Child count at:{count}</h2>
-      <button onClick={updateCounter}>Click</button>
+      
     </div>
-  );
-};
+  )
+}
 
-export default memo(Child);
-
-
+export default Child
