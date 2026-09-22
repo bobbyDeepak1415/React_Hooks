@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Child = ({count,setItem}) => {
+const Child = ({count,increment}) => {
 
     console.log("child rendering")
 
@@ -9,7 +9,7 @@ const Child = ({count,setItem}) => {
     <div>
       <h2>Child count at:{count}</h2>
 
-      
+      <button onClick={increment}>+</button>
     </div>
   )
 }
