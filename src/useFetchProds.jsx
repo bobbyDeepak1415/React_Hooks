@@ -10,17 +10,15 @@ const fetchProds=async()=>{
 
   const res=await fetch(url)
   const response=await res.json()
+  console.log(response.products)
+  setProducts(response.products)
 
 }
 
 fetchProds()
   },[url])
 
-  return (
-    <div>
-      Hello
-    </div>
-  )
+  return {products}
 }
 
 export default useFetchProds
