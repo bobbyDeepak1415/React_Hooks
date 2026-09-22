@@ -10,14 +10,16 @@ const Demo = () => {
 
   return (
     <div>
+      <h1>{item}</h1>
       <h2>Parent count at:{count}</h2>
       
       <button onClick={()=>setCount(prev=>prev+1)}>+</button>
 
 <input value={item} onChange={(e)=>setItem(e.target.value)}/>
 
+
       <div>
-        <Child count={count}/>
+        <Child setItem={setItem} count={count}/>
       </div>
       
     </div>
