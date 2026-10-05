@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 const useFetchProds = (url) => {
@@ -10,8 +9,9 @@ useEffect(()=>{
 const fetchData=async()=>{
   try{
 
-    const res=await axios.get(url)
-    setProducts(res.products.data)
+    const res=await fetch(url)
+    const response=await res.json()
+    setProducts(response.products)
   }catch(err){
     console.error("failed to fetch...",err)
   }
