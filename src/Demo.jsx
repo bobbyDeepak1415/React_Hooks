@@ -1,27 +1,9 @@
-import React, { useReducer } from 'react'
-
-
-const intiialState={
-  count:0
-}
-
-function reducer(state,action){
-switch(action.type){
-  case "increment":
-   state.count+=1
-}
-}
-
+import React from 'react'
 
 const Demo = () => {
-
-  const [state,dispatch]=useReducer(reducer,intiialState)
-
   return (
     <div>
-      <p>Count is at:{state.count}</p>
-      <button onClick={()=>dispatch("increment")}>Increment</button>
-      
+      Hello
     </div>
   )
 }
