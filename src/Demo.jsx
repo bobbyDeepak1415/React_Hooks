@@ -1,9 +1,14 @@
 import React from 'react'
 
 const Demo = () => {
+
+  const handleClick=()=>{
+    alert("btn clicked")
+  }
+
   return (
     <div>
-      Hello
+      <button onClick={handleClick}>Click me</button>
     </div>
   )
 }
