@@ -4,7 +4,7 @@ const Demo = () => {
 
 
   const handleClick=(e)=>{
-    console.log(e.target.value)
+    console.log(e.type)
     alert("btn clicked")
   }
 
