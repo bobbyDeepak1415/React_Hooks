@@ -1,27 +1,29 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 
 const Demo = () => {
 
 
-  const handleClick=(e)=>{
-    console.log(e)
-    // alert("btn clicked")
-  }
+  
 
-  const title="Bobby"
+  // const count=useSelector((state)=>state.counter.count)
+  const count=useSelector((state)=>state.hello.count)
 
-  const handleWelcome=()=>{
-        console.log(`welcome ${title}`)
 
-  }
-
-  return (
-    <div>
-      <button  onClick={handleClick}>Click me baby</button>
-      <button  onClick={(e)=>handleClick(e)}>Click me baby 2</button>
-      <button  onClick={handleWelcome}>Welcome Bobby</button>
-    </div>
-  )
+return (
+  <>
+  <h2>Redux App</h2>
+  <div>
+    <h2>Count is at: {count}</h2>
+    <button>Decrement</button>
+    {/* <button>Increment</button> */}
+    {/* <button>Multiply By 3</button> */}
+    {/* <button>Reset</button> */}
+  </div>
+  </>
+)
+  
 }
 
 export default Demo
