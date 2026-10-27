@@ -7,30 +7,9 @@
     <title>vite-project</title>
   </head>
   <body>
-    <!-- <div id="root"></div> -->
-     <div style="height: 20vh;width: 100vw; border: 1px solid black;" id="parent">
-      <ul id="list">
-        <li data-li="apples">Apples</li>
-        <li data-li="oranges">Oranges</li>
-        <li data-li="grapes">Grapes</li>
-        <button>Oh yeah</button>
-      </ul>
-     </div>
+    <div id="root"></div>
+     
 
-     <script>
-      
-      const list=document.getElementById("list")
-      list.addEventListener("click",(event)=>{
-
-        if(event.target && event.target.nodeName==="LI" || "BUTTON"){
-
-          console.log(event.target.textContent)
-        }
-        
-      })
-
-     </script>
-
-    <!-- <script type="module" src="/src/main.jsx"></script> -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
