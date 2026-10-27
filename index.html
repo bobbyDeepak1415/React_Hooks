@@ -10,21 +10,22 @@
     <!-- <div id="root"></div> -->
      <div style="height: 20vh;width: 100vw; border: 1px solid black;" id="parent">
       <ul id="list">
-        <li>Apples</li>
-        <li>Oranges</li>
-        <li>Grapes</li>
+        <li data-li="apples">Apples</li>
+        <li data-li="oranges">Oranges</li>
+        <li data-li="grapes">Grapes</li>
+        <button>Oh yeah</button>
       </ul>
      </div>
 
      <script>
-      const parent=document.querySelector("#parent")
-      parent.addEventListener("click",()=>{
-        // console.log("parent clicked")
-      })
       
       const list=document.getElementById("list")
-      list.addEventListener("click",()=>{
+      list.addEventListener("click",(event)=>{
 
+        if(event.target && event.target.nodeName==="LI"){
+
+          console.log(event.target.textContent)
+        }
         
       })
 
