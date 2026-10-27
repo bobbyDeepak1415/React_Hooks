@@ -1,6 +1,10 @@
 import React from 'react'
 
 const Child1 = (props) => {
+
+    console.log("child rendering...")
+  
+
   return (
     <div>
       <h2>Child count is at:{props.count}</h2>
@@ -8,5 +12,5 @@ const Child1 = (props) => {
   )
 }
 
-export default Child1
+export default React.memo(Child1)
 

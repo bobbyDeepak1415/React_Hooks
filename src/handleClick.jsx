@@ -1,7 +1,8 @@
-import React from "react";
+
+
 
 const handleClick = (setCount) => {
-  setCount((prev) => prev + 1);
-};
+setCount(count=>count+1)
+}
 
-export default handleClick;
+export default handleClick
