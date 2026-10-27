@@ -1,8 +1,8 @@
 
 
 
-const handleClick = (setCount) => {
-setCount(count=>count+1)
+const handleClick = (setCount,num) => {
+setCount(count=>count+num)
 }
 
 export default handleClick
