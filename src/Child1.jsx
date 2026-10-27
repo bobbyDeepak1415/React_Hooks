@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Child1 = () => {
+const Child1 = (props) => {
   return (
     <div>
-      Child1
+      <h2>Child count is at:{props.count}</h2>
     </div>
   )
 }
