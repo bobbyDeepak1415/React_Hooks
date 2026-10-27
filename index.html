@@ -7,7 +7,29 @@
     <title>vite-project</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- <div id="root"></div> -->
+     <div style="height: 20vh;width: 100vw; border: 1px solid black;" id="parent">
+      <ul id="list">
+        <li>Apples</li>
+        <li>Oranges</li>
+        <li>Grapes</li>
+      </ul>
+     </div>
+
+     <script>
+      const parent=document.querySelector("#parent")
+      parent.addEventListener("click",()=>{
+        // console.log("parent clicked")
+      })
+      
+      const list=document.getElementById("list")
+      list.addEventListener("click",()=>{
+
+        
+      })
+
+     </script>
+
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
   </body>
 </html>
