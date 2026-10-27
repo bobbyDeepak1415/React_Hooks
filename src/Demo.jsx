@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import Child1 from './Child1'
 import handleClick from './handleClick'
 
@@ -6,21 +6,23 @@ const Demo = () => {
 
   console.log("parent rendering...")
 
-  let num=20
 
 const [count,setCount]=useState(0)
 const [title,setTitle]=useState("")
 
 // const handleBtnClick=()=>{
 //   console.log("function created")
-// setCount(prev=>prev+num)
+// handleClick(setCount)
 // }
 const handleBtnClick=useCallback(()=>{
   console.log("function created")
-handleClick(setCount,num)
-},[count])
+handleClick(setCount)
+},[])
 
-
+const expensiveValue=useMemo(()=>{
+  console.log("expensive computation done")
+  return count*1000
+})
 
   return (
     <div>
