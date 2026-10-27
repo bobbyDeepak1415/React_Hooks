@@ -22,7 +22,7 @@
       const list=document.getElementById("list")
       list.addEventListener("click",(event)=>{
 
-        if(event.target && event.target.nodeName==="LI"){
+        if(event.target && event.target.nodeName==="LI" || "BUTTON"){
 
           console.log(event.target.textContent)
         }
