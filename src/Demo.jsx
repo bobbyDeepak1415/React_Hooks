@@ -22,16 +22,16 @@ handleClick(setCount)
 const expensiveValue=useMemo(()=>{
   console.log("expensive computation done")
   return count*1000
-})
+},[count])
 
   return (
     <div>
-<p>Expensive computed number:</p>
+<p>Expensive computed number:{expensiveValue}</p>
       <h1>Parent Count is at:{count}</h1>
       <button onClick={handleBtnClick}>Increment</button>
 
       <input value={title} type='text' onChange={(e)=>setTitle(e.target.value)}/>
-      <Child1 handleClick={handleBtnClick}  count={count}/>
+      <Child1 bigNum={expensiveValue} handleClick={handleBtnClick}  count={count}/>
     </div>
   )
 }

@@ -9,6 +9,7 @@ const Child1 = (props) => {
     <div>
       <h2>Child count is at:{props.count}</h2>
       <button onClick={props.handleClick}>Child button</button>
+      <p>Bignum:{props.bigNum}</p>
     </div>
   )
 }
