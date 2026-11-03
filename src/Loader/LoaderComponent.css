@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+.box_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .box{
     height: 20px;
     width: 20px;
