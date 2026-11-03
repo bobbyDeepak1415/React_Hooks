@@ -3,13 +3,10 @@ import './LoaderComponent.css';
 
 const Loader=({boxes})=>{
 
-let localArr=[]
+let localArr=Array.from({length:boxes})
 
-const count = parseInt(boxes) || 0;
 
-for(let i=0;i<count;i++){
-  localArr.push(i)
-}
+
 
 
 
