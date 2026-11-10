@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 
 
 const initialState={
-  count:100
+  count:0
 }
 
 function reducer(state,action){
@@ -10,6 +10,11 @@ switch(action.type){
   case "decrement" :{
     return {
       count:state.count-1
+    }
+  }
+  case "increment" :{
+    return {
+      count:state.count+1
     }
   }
 }
@@ -24,6 +29,7 @@ const Demo = () => {
     <div>
       <h2>Count is at:{state.count}</h2>
       <button onClick={()=>dispatch({type:"decrement"})}>decrement</button>
+      <button onClick={()=>dispatch({type:"increment"})}>increment</button>
       
     </div>
   )
