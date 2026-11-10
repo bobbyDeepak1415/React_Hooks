@@ -1,33 +1,17 @@
-import React, { useReducer } from 'react'
-
-
-
-function reducer(state,action){
-switch(action.type){
-  case "decrement" :
-    return {
-      count:state.count-1
-    
-  }
-  case "increment" :
-    return {
-      count:state.count+1
-    
-  }
-}
-}
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { increment } from './redux/CounterSlice';
 
 const Demo = () => {
 
+  const count=useSelector((state)=>state.counter.value)
 
-  const [state,dispatch]=useReducer(reducer,initialState)
+  const dispatch = useDispatch();
 
   return (
     <div>
-      <h2>Count is at:{state.count}</h2>
-      <button disabled={state.count===0} onClick={()=>dispatch({type:"decrement"})}>decrement</button>
-      <button onClick={()=>dispatch({type:"increment"})}>increment</button>
-      
+      <h2>Count is at:{count}</h2>
+      <button onClick={()=>dispatch(increment())}>decrement</button>
     </div>
   )
 }

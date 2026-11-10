@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState={
-  count:0
+  value:32
 }
 
 const CounterSlice=createSlice({
