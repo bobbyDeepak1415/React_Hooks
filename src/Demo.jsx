@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Store from './Store'
+import { getData } from './getData'
 
 const Demo = () => {
   return (
@@ -30,8 +31,12 @@ function NavWrapper(){
     <Link to='/about'>About</Link>
     <Link to='/store'>Store</Link>
   </nav>
+  <Suspense>
 
   <Outlet/>
+  </Suspense>
+<button onClick={()=>alert(getData())}>getData</button>
+
   </div>
 }
 
