@@ -11,11 +11,11 @@ const Home=React.lazy(()=>import('./Home').then((module)=>{
     default:module.default
   }
 }))
-const About=React.lazy(()=>import('./About').then((module)=>{
+const About=React.lazy(()=>delay(2500).then(()=>import('./About').then((module)=>{
   return {
     default:module.default
   }
-}))
+})))
 const Store=React.lazy(()=>import('./Store').then((module)=>{
   return {
     default:module.Store
@@ -48,13 +48,20 @@ function NavWrapper(){
     <Link to='/about'>About</Link>
     <Link to='/store'>Store</Link>
   </nav>
-  <Suspense>
+  <Suspense fallback={<p>Loading...</p>}>
 
   <Outlet/>
   </Suspense>
 <button onClick={()=>import('./getData').then((module)=>alert(module.getData()))}>getData</button>
 
   </div>
+}
+
+
+function delay(timer){
+  return new Promise((resolve)=>{
+setTimeout(resolve,timer)
+  })
 }
 
 export default Demo
