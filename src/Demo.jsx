@@ -1,12 +1,17 @@
 import React, { Suspense } from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
 // import Home from './Home'
-import About from './About'
+// import About from './About'
 // import Store from './Store'
 import { getData } from './getData'
 
 
 const Home=React.lazy(()=>import('./Home').then((module)=>{
+  return {
+    default:module.default
+  }
+}))
+const About=React.lazy(()=>import('./About').then((module)=>{
   return {
     default:module.default
   }
@@ -37,7 +42,7 @@ function NavWrapper(){
   return <div>
 
   
-  <nav>
+  <nav style={{height:"50px",fontSize:"30px",display:"flex",gap:"20px"}}>
     
     <Link to='/'>Home</Link>
     <Link to='/about'>About</Link>
