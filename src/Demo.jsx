@@ -6,6 +6,8 @@ const Demo = () => {
     <div>
       <Routes>
         <Route path='/' element={<NavWrapper/>}>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/'></Route>
           <Route path='/'></Route>
         </Route>
 
@@ -17,9 +19,9 @@ const Demo = () => {
 
 function NavWrapper(){
   return <nav>
-    <Link>Home</Link>
-    <Link>About</Link>
-    <Link>Home</Link>
+    <Link path='/'>Home</Link>
+    <Link path='/about'>About</Link>
+    <Link path='/store'>Store</Link>
   </nav>
 }
 
