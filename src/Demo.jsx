@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
-import About from './About'
+// import About from './About'
 // import Home from './Home'
-import {Store} from './Store'
+// import {Store} from './Store'
 import { getData } from './getData'
 
 const Home=React.lazy(()=>import('./Home').then((module)=>{
@@ -15,7 +15,11 @@ const About=React.lazy(()=>import('./About').then((module)=>{
     default:module.default
   }
 }))
-const Store
+const Store=React.lazy(()=>import('./Store').then((module)=>{
+  return {
+    default:module.Store
+  }
+}))
 
 const Demo = () => {
   return (
@@ -41,8 +45,11 @@ function Navwrapper(){
     <Link to='/store'>Store</Link>
 
   </nav>
+  <Suspense>
+
   <Outlet/>
-  <button onClick={()=>alert(getData())}>GetData</button>
+  </Suspense>
+  <button onClick={()=>import('./getData').then((module)=>alert(module.getData()))}>GetData</button>
   </div>
 }
 
