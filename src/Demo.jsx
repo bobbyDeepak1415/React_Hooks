@@ -1,9 +1,21 @@
 import React, { Suspense } from 'react'
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
-import Home from './Home'
+// import Home from './Home'
 import About from './About'
-import Store from './Store'
+// import Store from './Store'
 import { getData } from './getData'
+
+
+const Home=React.lazy(()=>import('./Home').then((module)=>{
+  return {
+    default:module.default
+  }
+}))
+const Store=React.lazy(()=>import('./Store').then((module)=>{
+  return {
+    default:module.Store
+  }
+}))
 
 const Demo = () => {
   return (
