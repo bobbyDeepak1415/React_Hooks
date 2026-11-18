@@ -52,7 +52,7 @@ function NavWrapper(){
 
   <Outlet/>
   </Suspense>
-<button onClick={()=>alert(getData())}>getData</button>
+<button onClick={()=>import('./getData').then((module)=>alert(module))}>getData</button>
 
   </div>
 }
