@@ -1,21 +1,11 @@
 import React from 'react'
 
-
-
-const Child1 = ({count,setName}) => {
-
-console.log('child rendering')  
-
-let title="Deepak"
-
+const Child1 = () => {
   return (
     <div>
-      <h2>Child count at:{count}</h2>
-      <button onClick={()=>setName(title)}>set name</button>
+      Hello
     </div>
   )
 }
 
-export default React.memo(Child1)
-
-
+export default Child1

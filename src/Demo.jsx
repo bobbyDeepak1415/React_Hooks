@@ -1,43 +1,42 @@
-import React, { useCallback, useMemo, useState } from 'react'
-import Child1 from './Child1'
-
+import React, { useEffect, useState } from 'react'
 import handleClick from './handleClick'
 
 const Demo = () => {
 
-
-
-console.log('parent rendering')  
-
-  const [count,setCount]=useState(0)
+  const [products,setProducts]=useState([])
   const [item,setItem]=useState("")
+  const [localValue,setLocalValue]=useState("")
+  const url="https://dummyjson.com/products"
 
-  const memoizedClick=useCallback(()=>{
-    console.log('handleClick recreated')
-    handleClick(setCount)
-  },[setCount])
-  
-  const expensiveValue= useMemo(()=>{
-    console.log('value recalculated')
-return count*1000
-  },[count])
+useEffect(()=>{
+const fetchProducts=async()=>{
+  try{
 
-
-  const setName=(name)=>{
-    
-    console.log(name)
+    const res=await fetch(url)
+    const response=await res.json()
+    setProducts(response.products)
+  }catch(err){
+console.log("failed to fetch...",err)
   }
+}
+fetchProducts()
+},[url])
+
+
+
+
+const filteredProducts=products.filter((product)=>product.title.toLowerCase().includes(item.toLowerCase()))
 
 
   return (
     <div>
-      <p>Expensive value:{expensiveValue}</p>
-      <input value={item} onChange={(e)=>setItem(e.target.value)}/>
-      
-      <h1>Parent count at:{count}</h1>
-      <button onClick={memoizedClick}>Increment</button>
-      <Child1 setName={setName} count={count}/>
-      <button onClick={setName}>Print Name</button>
+      <input value={localValue} onChange={handleChange}/>
+      <h2>Your products here:</h2>
+      <ul>
+        {filteredProducts.map((product)=>{
+          return <li key={product.id}>{product.title}</li>
+        })}
+      </ul>
     </div>
   )
 }
