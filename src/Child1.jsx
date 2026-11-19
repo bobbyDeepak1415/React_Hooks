@@ -2,12 +2,12 @@ import React from 'react'
 
 
 
-const Child1 = () => {
+const Child1 = ({count}) => {
 
 
   return (
     <div>
-      Child1 baby
+      <h2>Child count at:{count}</h2>
     </div>
   )
 }
