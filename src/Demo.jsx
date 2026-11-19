@@ -22,7 +22,9 @@ console.log('parent rendering')
 return count*1000
   },[count])
 
-  const setName=()=>{
+
+  const setName=(name)=>{
+    
     console.log(name)
   }
 
@@ -35,9 +37,7 @@ return count*1000
       <h1>Parent count at:{count}</h1>
       <button onClick={memoizedClick}>Increment</button>
       <Child1 setName={setName} count={count}/>
-      <button onClick={()=>{
-        console.log(name)
-      }}>Print Name</button>
+      <button onClick={setName}>Print Name</button>
     </div>
   )
 }
