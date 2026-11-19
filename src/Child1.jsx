@@ -4,6 +4,7 @@ import React from 'react'
 
 const Child1 = ({count}) => {
 
+console.log('child rendering')  
 
   return (
     <div>
@@ -12,6 +13,6 @@ const Child1 = ({count}) => {
   )
 }
 
-export default Child1
+export default React.memo(Child1)
 
 
