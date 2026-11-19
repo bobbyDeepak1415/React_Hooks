@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import handleClick from './handleClick'
 
 const Demo = () => {
@@ -22,6 +22,31 @@ console.log("failed to fetch...",err)
 fetchProducts()
 },[url])
 
+const myDebounce=(func,delay)=>{
+let timer=0
+  return function(...args){
+clearTimeout(timer)
+timer=setTimeout(()=>{
+  func(...args)
+
+},delay)
+  }
+
+}
+
+const debounceFunc=useMemo(()=>{
+return myDebounce((value)=>{
+setItem(value)
+},1500)
+
+
+},[])
+
+const handleChange=(e)=>{
+setLocalValue(e.target.value)
+debounceFunc(e.target.value)
+
+}
 
 
 
