@@ -30,7 +30,7 @@ const Demo = () => {
 
 {colors.map((colour,index)=>{
 const boxColour=activeIndex===index ? colour : "gray"
-  return <div name={colour} key={index} style={{height:"50px",width:"50px",backgroundColour:{boxColour}}}></div>
+  return <div name={colour} key={index} style={{height:"50px",width:"50px",backgroundColor:boxColour}}></div>
 })}
   
 
