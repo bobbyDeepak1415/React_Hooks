@@ -13,16 +13,18 @@ const Demo = () => {
 
   useEffect(()=>{
     
-    setInterval(()=>{
+   let timer=setInterval(()=>{
 
       setActiveIndex(prev=>(prev+1)%colors.length)
     },1000)
 
-  },[colors])
+    return ()=>clearInterval(timer)
+
+  },[])
 
 
   return (
-    <div className='container'>
+    <div style={{display:'flex',flexDirection:"column",justifyContent:"center",alignItems:"center",border:"1px solid black",padding:"auto",height:"50vh",width:"50vw",margin:"auto",gap:"30px",marginTop:"50px"}} className='container'>
 
 
 
@@ -30,7 +32,7 @@ const Demo = () => {
 
 const boxColour=activeIndex===index ? colour : "gray"
 
-    return <div key={index} className={boxColour} name={colour}></div>
+    return <div key={index} style={{height: "50px",width: "50px"}} className={boxColour} data-color={colour}></div>
   })}
 
 
