@@ -11,6 +11,16 @@ const Demo = () => {
   const [activeIndex,setActiveIndex]=useState(0)
 
 
+  useEffect(()=>{
+    
+    setInterval(()=>{
+
+      setActiveIndex(prev=>(prev+1)%colors.length)
+    },1000)
+
+  },[])
+
+
   return (
     <div className='container'>
 
