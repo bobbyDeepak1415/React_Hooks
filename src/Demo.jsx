@@ -13,7 +13,15 @@ const Demo = () => {
   const localArr=Array.from({length:count})
 
 
-  useEffect(()={
+  useEffect(()=>{
+
+    if(count===0) return
+
+    setActiveIndex(0)
+
+    setInterval(()=>{
+     setActiveIndex((prev)=>(prev+1)%count) 
+    })
 
   },[])
 
