@@ -23,7 +23,7 @@ const Demo = () => {
      setActiveIndex((prev)=>(prev+1)%count) 
     })
 
-  },[])
+  },[count])
 
   return (
     <div className='container'>
