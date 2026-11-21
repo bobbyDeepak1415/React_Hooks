@@ -23,18 +23,16 @@ const Demo = () => {
   },[])
 
 
+
+
   return (
-    <div style={{display:'flex',flexDirection:"column",justifyContent:"center",alignItems:"center",border:"1px solid black",padding:"auto",height:"50vh",width:"50vw",margin:"auto",gap:"30px",marginTop:"50px"}} className='container'>
+    <div className='container'>
 
-
-
-  {colors.map((colour,index)=>{
-
+{colors.map((colour,index)=>{
 const boxColour=activeIndex===index ? colour : "gray"
-
-    return <div key={index} style={{height: "50px",width: "50px"}} className={boxColour} data-color={colour}></div>
-  })}
-
+  return <div name={colour} key={index} style={{height:"50px",width:"50px",backgroundColour:{boxColour}}}></div>
+})}
+  
 
     </div>
   )
