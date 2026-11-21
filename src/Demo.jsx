@@ -18,7 +18,7 @@ const Demo = () => {
       setActiveIndex(prev=>(prev+1)%colors.length)
     },1000)
 
-  },[])
+  },[colors])
 
 
   return (
@@ -26,11 +26,11 @@ const Demo = () => {
 
 
 
-  {colors.map((box,index)=>{
+  {colors.map((colour,index)=>{
 
-const boxColour=activeIndex===index ? colors[index] : "gray"
+const boxColour=activeIndex===index ? colour : "gray"
 
-    return <div key={index} className={boxColour} name={box}></div>
+    return <div key={index} className={boxColour} name={colour}></div>
   })}
 
 
@@ -39,4 +39,3 @@ const boxColour=activeIndex===index ? colors[index] : "gray"
 }
 
 export default Demo
-
