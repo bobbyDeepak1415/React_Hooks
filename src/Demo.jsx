@@ -25,9 +25,9 @@ const Demo = () => {
 
   {localArr.map((box,index)=>{
 
-const boxColour=
+const boxColour=activeIndex===index ? `box activeBox` : `box`
 
-    return <div key={index} className='box' name={box}></div>
+    return <div key={index} className={boxColour} name={box}></div>
   })}
 </div>
 
